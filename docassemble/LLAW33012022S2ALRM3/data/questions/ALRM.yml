@@ -1,0 +1,36 @@
+# This application is developed for potential clients who are seeking legal services from the ALRM
+---
+mandatory: True
+code: |
+  ALRMdisplay_welcome_screen
+---
+code: |
+  ALRMdisplay_welcome_screen = True
+  force_ask('ALRMwelcome_screen')
+---
+event: ALRMwelcome_screen
+question: Welcome to the Aboriginal Legal Rights Movement
+subquestion: |
+  The ALRM helps Aboriginal people who have come into contact with the Police or the Courts. ALRM provide representation, prison advice and after-hours custody advice service. 
+  
+  
+  ALRM helps Aboriginal people who have come into contact with the Police or the Courts.   We provide representation, prison advice and after-hours custody advice service.
+
+  This application can be used to gather information and determine whether you are eligible for legal support through the ALRM. 
+
+  Please note that this application does not provide any legal advice. 
+  
+  Do you accept these terms?
+buttons: 
+  - Yes I accept: continue
+  - No I do not accept: exit 
+---
+mandatory: True
+question: Do you identify as Aboriginal or Torres Strait Islander?
+fields: 
+  - no label: ALRM_ATSI
+    datatype: radio
+    choices:
+      - Yes: ATSI
+      - No: Not_ATSI
+---
