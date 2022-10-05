@@ -1,0 +1,94 @@
+---
+include:
+ - 3Questions.yml
+---
+# This application is developed for potential clients who are seeking legal services from the ALRM
+# Nathan's updates 3/10
+---
+objects:
+  - endpoint: DADict
+---
+mandatory: True
+question: Welcome to the Aboriginal Legal Rights Movement
+subquestion: |
+  The ALRM helps Aboriginal people who have come into contact with the Police or the Courts. ALRM provide representation, prison advice and after-hours custody advice service. 
+  
+  
+  ALRM helps Aboriginal people who have come into contact with the Police or the Courts.   We provide representation, prison advice and after-hours custody advice service.
+  This application can be used to gather information and determine whether you are eligible for legal support through the ALRM. 
+  Please note that this application does not provide any legal advice. 
+  
+  Do you accept these terms?
+buttons: 
+  - Yes I accept: continue
+  - No I do not accept: exit
+    url: https://www.alrm.org.au/
+---
+# This is the mandatory block that controls the logic for our application
+# It directs our user to the eligible and ineligible screens.
+mandatory: True
+code: |
+  if ALRM_ATSI == 'Yes_ATSI':
+    endpoint['eligible']
+  else:
+    endpoint['ineligible']
+---
+question: Do you identify as Aboriginal or Torres Strait Islander?
+subquestion: |
+  Please select one of the following options
+field: ALRM_ATSI
+choices:
+  - Yes: Yes_ATSI
+  - No: Not_ATSI
+---
+# Ineligible endpoint
+# This screen is displayed if the user selects no when asked if they identify as an Aboriginal or Torres Strait Islander
+event: endpoint['ineligible']
+question: You are not eligible
+subquestion: |
+  Unfortunately you are not eligible to receive our support.
+  
+  The Aborgional Legal Rights Movement can only support clients that identify as an Aborgional or Torress Strait Islander person.
+  However, we hope these legal services may be able to assit you:
+  
+   1. Legal Services Commission of SA (LSC) provides legal services for people who can't afford to pay for legal representation.
+    
+        Phone: 1300 366 424
+    
+   2. Community Justice Services provide legal advice, assistance and referral to community members who might not otherwise get the help  they need. Most centres provide services free of charge.
+    
+   3. Uniting Communities provides information, advice and     representation on social security matters, including Centrelink and   appeals in the Administrative Appeal Tribunal. This service is available to people on a government benefit, living in South Australia, and aged 15 and over.
+   
+       Phone: 8342 1800
+  
+  4. Women's Legal Service is a community-based legal centre that   provides free and confidential legal services to women in SA.
+   
+       Phone: 8221 5553 
+
+  
+buttons:
+  - Restart: restart
+  - Exit: exit
+    url: https://www.alrm.org.au/
+---
+# This is where we are going to display the answers the user has entered
+# Note: We still need to ask these questions.
+event: endpoint['eligible']
+question: The information you have provided us
+subquestion: |
+  Here are the answers you have provided
+  
+  Question|Answer
+  ---|---
+  Your name|${NRFname}
+  Other party's name|${NRFother}
+  Age|${NRFage}
+  Gender|${NRFgender}
+  Address|${NRFaddress}
+  Contact Number|${NRFphone}
+  Email|${NRFemail}
+  
+buttons:
+  - Restart: restart
+  - Exit: exit
+    url: https://www.alrm.org.au/
