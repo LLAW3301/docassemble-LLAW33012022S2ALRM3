@@ -1,0 +1,18 @@
+---
+question: Legal Issue
+fields:
+  - What is the nature of your legal issue(s)?: ALRMLegalissue
+    datatype: checkboxes
+    choices:
+     - Child Protection
+     - Family Law
+     - Workcover
+     - Discrimination
+     - Employment
+     - Police Complaint
+     - Victims of Crime
+     - Personal Injury
+     - Motor Vehicle Accident Claims
+     - National Redress Scheme (sexual abuse clients)
+     - Other (if other, please specify)
+---
