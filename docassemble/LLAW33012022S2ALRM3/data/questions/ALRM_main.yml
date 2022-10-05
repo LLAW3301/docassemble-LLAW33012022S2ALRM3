@@ -95,6 +95,7 @@ subquestion: |
   Address|${NRFaddress}
   Contact Number|${NRFphone}
   Email|${NRFemail}
+  Legal Issue|${ALRMLegalissue.true_values()}
   
 buttons:
   - Restart: restart
