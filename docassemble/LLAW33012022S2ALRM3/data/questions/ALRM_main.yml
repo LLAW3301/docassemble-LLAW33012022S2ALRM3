@@ -97,6 +97,12 @@ subquestion: |
   Email|${NRFemail}
   Legal Issue|${ALRMLegalissue.true_values()}
   
+  % if email_sent_ok:
+  The e-mail was sent successfully.
+  % else:
+  There was a problem sending the e-mail.
+  % endif
+  
 buttons:
   - Restart: restart
   - Exit: exit

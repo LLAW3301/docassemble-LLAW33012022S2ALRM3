@@ -1,50 +1,18 @@
-objects:
-  - recipient: Individual
----
-question: |
-  E-mail test
-subquestion: |
-  % if intro_provided and email_sent_ok:
-  The e-mail was sent successfully.
-  % else:
-  There was a problem sending the e-mail.
-  % endif
-attachment:
-   docx template file: email_template.docx
-   valid formats:
-     - pdf
----
-question: |
-  E-mail test
-subquestion: |
-  This interview will send you an e-mail.
-field: intro_provided
----
-question: |
-  What is your name?
-fields:
-  - First Name: recipient.name.first
-  - Last Name: recipient.name.last
----
-question: |
-  What is your e-mail address?
-fields:
-  - E-mail: recipient.email
-    datatype: email
 ---
 code: |
-  email_sent_ok = send_email(to=recipient, template=notification)
+  email_sent_ok = send_email(to="ferg0178@flinders.edu.au", template=notification)
 ---
 template: notification
 subject: |
-  Greetings, ${ recipient }!
+  Greetings, ${ NRFname }!
 content: |
-  This is an e-mail sent from a
-  **docassemble** interview.
-  
-  first name ${recipient.name.first}
-  
-  last name ${recipient.name.last}
-
-  Have a nice day!
+  Question|Answer
+  ---|---
+  Your name|${NRFname}
+  Other party's name|${NRFother}
+  Age|${NRFage}
+  Gender|${NRFgender}
+  Address|${NRFaddress}
+  Contact Number|${NRFphone}
+  Email|${NRFemail}
 ---
