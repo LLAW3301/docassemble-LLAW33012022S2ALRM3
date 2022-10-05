@@ -1,7 +1,6 @@
 objects:
   - recipient: Individual
 ---
-mandatory: true
 question: |
   E-mail test
 subquestion: |
