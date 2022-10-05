@@ -45,7 +45,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 setup(name='docassemble.LLAW33012022S2ALRM3',
       version='0.0.1',
       description=('A docassemble extension.'),
-      long_description='# docassemble.LLAW33012022S2ALRM3\r\n\r\nA docassemble extension.\r\n\r\n## Author\r\n\r\nYasmin Popovich, popo0029@flinders.edu.au\r\nTiana Merlino, merl0010@flinders.edu.au\r\nNathan Fiedler, fied0010@flinders.edu.au',
+      long_description='# docassemble.LLAW33012022S2ALRM3\r\n\r\nA docassemble extension.\r\n\r\n## Author\r\n\r\nYasmin Popovich, popo0029@flinders.edu.au\r\nTiana Merlino, merl0010@flinders.edu.au\r\nNathan Fiedler, fied0010@flinders.edu.au\r\nBlaze Ferguson, ferg0178@flinders.edu.au',
       long_description_content_type='text/markdown',
       author='Yasmin Popovich',
       author_email='popo0029@flinders.edu.au',

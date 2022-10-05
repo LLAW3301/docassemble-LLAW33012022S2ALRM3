@@ -2,6 +2,7 @@
 ---
 include:
  - ALRM_questions.yml
+ - ALRM_EMAIL.yml
 ---
 objects:
   - endpoint: DADict
