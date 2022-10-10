@@ -15,6 +15,7 @@ code: |
   ALRMdisplay_welcome_screen = True
   force_ask('ALRMwelcome_screen')
 ---
+#This is our welcome screen, which users will see first upon running our application
 event: ALRMwelcome_screen
 question: Welcome to the Aboriginal Legal Rights Movement
 subquestion: |
@@ -31,6 +32,7 @@ subquestion: |
 buttons: 
   - Yes I accept: continue
   - No I do not accept: exit 
+    url: https://www.alrm.org.au/
 ---
 # This is the mandatory block that controls the logic for our application
 # It directs our user to the eligible and ineligible screens.
@@ -96,13 +98,17 @@ subquestion: |
   Contact Number|${NRFphone}
   Email|${NRFemail}
   Legal Issue|${ALRMLegalissue.true_values()}
+
+  Thank you for taking the time to complete some questions about you and your issue. We will be in touch soon!
+  
+  If you do require any emergency assistance please call our 24 hour service on (08) 8113 3777. Or alternatively on our free call (SA only) on 1800 643 222. 
   
   % if email_sent_ok:
   The e-mail was sent successfully.
   % else:
   There was a problem sending the e-mail.
   % endif
-  
+ 
 buttons:
   - Restart: restart
   - Exit: exit
