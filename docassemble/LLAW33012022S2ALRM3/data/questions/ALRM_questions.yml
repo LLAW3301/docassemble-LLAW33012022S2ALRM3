@@ -1,0 +1,76 @@
+---
+question: Do you identify as Aboriginal or Torres Strait Islander?
+subquestion: |
+  Please select one of the following options
+field: ALRM_ATSI
+choices:
+  - Yes: Yes_ATSI
+  - No: Not_ATSI
+---
+question: What is your full legal name?
+subquestion: |
+  Please enter your legal name
+fields:
+  - no label: NRFname
+---
+question: Name of other party
+subquestion: |
+  Please enter the full name of other party
+fields:
+  - no label: NRFother
+---
+question: Gender
+subquestion: |
+  Please enter your gender
+fields:
+  - no label: NRFgender
+    input type: radio
+    choices:
+     - Male
+     - Female
+     - Other
+---
+question: Where do you live?
+subquestion: |
+  Please enter your residential address
+fields:
+  - no label: NRFaddress
+---
+question: How old are you?
+subquestion: |
+  Please enter your age
+fields:
+  - no label: NRFage
+    datatype: integer
+---
+question: Contact Number
+subquestion: |
+  Please enter your best contact number
+fields:
+  - Phone Number: NRFphone
+    datatype: integer
+--- 
+question: What is your email address?
+subquestion: |
+  Please enter your best email address
+fields: 
+  - Email Address: NRFemail
+    datatype: email
+---
+question: Legal Issue
+fields:
+  - What is the nature of your legal issue(s)?: ALRMLegalissue
+    datatype: checkboxes
+    choices:
+     - Child Protection
+     - Family Law
+     - Workcover
+     - Discrimination
+     - Employment
+     - Police Complaint
+     - Victims of Crime
+     - Personal Injury
+     - Motor Vehicle Accident Claims
+     - National Redress Scheme (sexual abuse clients)
+     - Other (if other, please specify)
+---

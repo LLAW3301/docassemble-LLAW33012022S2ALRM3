@@ -1,0 +1,19 @@
+# This is our text to display that you have completed the necessary questions and are eligible for legal assistance based on your answers
+---
+objects:
+  - endpoints: DADict
+---
+question: |
+   You have reached the end of the questionnaire!
+subquestion: |
+  Thank you for taking the time to complete some questions about you and your issue. We will be in touch soon!
+  
+  If you do require any emergency assistance please call our 24 hour service on (08) 8113 3777. Or alternatively on our free call (SA only) on 1800 643 222. 
+  
+  To read more about ALRM, press the 'Learn More' button below to be directed to our official website. 
+buttons:
+  - Try again: restart
+  - Learn More: exit
+    url: https://www.alrm.org.au/
+mandatory: True
+---

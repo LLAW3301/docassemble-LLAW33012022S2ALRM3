@@ -1,0 +1,18 @@
+---
+code: |
+  email_sent_ok = send_email(to="ferg0178@flinders.edu.au", template=notification)
+---
+template: notification
+subject: |
+  Greetings, ${ NRFname }!
+content: |
+  Question|Answer
+  ---|---
+  Your name|${NRFname}
+  Other party's name|${NRFother}
+  Age|${NRFage}
+  Gender|${NRFgender}
+  Address|${NRFaddress}
+  Contact Number|${NRFphone}
+  Email|${NRFemail}
+---
