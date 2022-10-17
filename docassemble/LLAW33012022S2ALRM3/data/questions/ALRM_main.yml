@@ -98,6 +98,53 @@ subquestion: |
   Contact Number|${NRFphone}
   Email|${NRFemail}
   Legal Issue|${ALRMLegalissue.true_values()}
+  % if ALRMLegalissue ['Victims of Crime']:
+  Incident reported to police|${VOC_incident_report}
+  Date of offence|${VOC_date_of_offence}
+  Perpetrator|${VOC_perpetrator}
+  Offender's Date of Birth|${VOC_dateofbirth_offender}
+  Offender charged and convicted|${VOC_offence}
+  % if VOC_offence == 'VOC_Yes_CC':
+  Injuries sustained|${VOC_injuries}
+  Hospital attendance|${VOC_hospital}
+  General Practitioner|${VOC_GP}
+  % if VOC_GP == 'VOC_Yes_GP':
+  Name of General Practitioner|${VOC_GP_name}
+  Medical Practice|{VOC_Name_MP}
+  % if ALRMLegalissue['Motor Vehicle Accident Claims']:
+  Date of offence|${MVA_date_of_offence}
+  Name of other Party|${MVA_party}
+  Registration of perpetrator|${MVA_registration}
+  Cause of Accident|${MVA_accident}
+  % if MVA_injury == 'MVA_Yes_Injury':
+  Injury Details|${MVA_detail_injury}
+  Other party's injuries|${MVA_injury_other}
+  Exchange of details|${MVA_details_other}
+  Medical help required|${MVA_medical_help}
+  Police contacted|${MVA_police}
+  % if MVA_police == 'MVA_Yes_police':
+  Date of Police Contact|${MVA_date_of_police_contact}
+  Insurance Claim|${MVA_Insurance_claim}
+  % if ALRMLegalissue['National Redress Scheme (sexual abuse clients)']:
+  Name in institution|${NRS_Name}
+  Placement Type|${NRS_placement_type}
+  Name of Institution|${NRS_institution_abuse}
+  Name of Perpetrator|${NRS_perpetrator}
+  Date of offence|${NRS_date_of_offence}
+  Age of abuse|${NRS_age}
+  Period of abuse|${NRS_abuse_period}
+  National Redress Scheme Prior Payments|${NRS_prior_payment}
+  % if NRS_prior_payment == 'NRS_prior_payment_received':
+  Deatils of Payment|${NRS_Payments}
+  % endif
+  % endif
+  % endif
+  % endif
+  % endif
+  % endif
+  % endif
+  % endif
+  
 
   Thank you for taking the time to complete some questions about you and your issue. We will be in touch soon!
   

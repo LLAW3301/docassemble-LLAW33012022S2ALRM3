@@ -72,5 +72,243 @@ fields:
      - Personal Injury
      - Motor Vehicle Accident Claims
      - National Redress Scheme (sexual abuse clients)
-     - Other (if other, please specify)
+     - Other 
 ---
+# This code block asks potential clients Victim of Crime questions 
+# 'VOC' is an abbreviation for Victim of Crime
+# a 'radio' allows a user to select one choice only
+question: Was the incident reported to the police?
+  
+fields:
+  - no label: VOC_incident_report
+    datatype: radio
+    choices:
+    - Yes, the incident was reported to the police: VOC_Reported
+    - No, the incident was not reported to the police: VOC_Not_reported
+---
+# A 'date' datatype allows a user to input the date
+question: What was the date of the offence?
+
+fields:
+  - no label: VOC_date_of_offence
+    datatype: date
+---
+# a 'fields' with 'no label' allows a user to enter free text for a name
+question: What was the full name of the offender? 
+
+fields: 
+  - no label: VOC_perpetrator
+---
+question: What was the date of birth (if known) of the offender?
+  
+fields:
+  - no label: VOC_dateofbirth_offender
+    datatype: date
+---
+question: Was the offender charged and convicted of an offence? 
+  
+fields: 
+  - no label: VOC_offence
+    datatype: radio
+    choices:
+      - Yes, the offender was charged and convicted of an offence: VOC_Yes_CC
+      - No, the offender was not charged and convicted of an offence: VOC_No_CC
+---
+# an 'input type' 'area' allows a user to enter free text
+question: Please provide details of the injuries sustained below.
+  
+fields:
+  - no label: VOC_injuries
+    input type: area
+---
+question:  Did you attend hospital?
+
+fields: 
+  - no label: VOC_hospital
+    datatype: radio
+    choices: 
+      - Yes I attended hospital: VOC_Yes_Hospital
+      - No, I did not attend hospital: VOC_No_Hospital
+---
+question: Do you have a General Practitioner?
+
+fields: 
+  - no label: VOC_GP
+    datatype: radio
+    choices: 
+      - Yes, I have a General Practitioner: VOC_Yes_GP
+      - No, I do not have a General Practitioner: VOC_No_GP
+---
+question: What is your General Practitoner's name?
+
+fields: 
+  - no label: VOC_GP_name
+---
+question: Please provide the name of the medical practice.
+
+fields: 
+  - no label: VOC_Name_MP
+---
+# This code block asks potential clients Motor Vehicle Accident questions
+---
+# A 'date' datatype allows a user to input the date
+question: What was the date of the offence?
+
+fields:
+  - no label: MVA_date_of_offence
+    datatype: date
+---
+# a 'fields' with 'no label' allows a user to enter free text for a name
+question: What was the full name of the other party?
+
+fields: 
+  - no label: MVA_party
+---
+question: If you have the other vehicle’s registration number involved in the accident, please provide below.
+
+fields: 
+  - no label: MVA_registration
+---
+question: How did the accident occur?
+
+fields: 
+  - no label: MVA_accident
+    input type: area
+---
+question: Did you sustain any injuries?
+
+fields:
+  - no label: MVA_injury
+    datatype: radio
+    choices: 
+      - Yes, I sustained injuries: MVA_Yes_Injury
+      - No, I did not sustain an injury: MVA_No_Injury
+---
+question: Please provide details of the injury(s) sustained
+
+fields:
+  - no label: MVA_detail_injury
+---
+question: Did the other driver sustain any injuries?
+
+fields:
+  - no label: MVA_injury_other
+    datatype: radio
+    choices: 
+      - Yes, the other driver sustained injuries: MVA_Yes_Injury_other
+      - No, the other driver did not sustain any injuries: MVA_No_Injury_other
+---
+question: Did you give your details to the other driver?
+
+fields:
+  - no label: MVA_details_other
+    datatype: radio
+    choices: 
+      - Yes, I gave my details to the other driver: MVA_Yes_details_other
+      - No, I did not give my details to the other driver: MVA_No_details_other
+---
+question:  Did you require medical help?
+
+fields: 
+  - no label: MVA_medical_help
+    datatype: radio
+    choices: 
+      - Yes, I did require medical help: MVA_Yes_medical_help
+      - No, I did not require medical help: MVA_No_medical_help
+---
+question: Did you contact the police?
+
+fields:
+  - no label: MVA_police
+    datatype: radio
+    choices: 
+      - Yes, I contacted the police: MVA_Yes_police
+      - No, I did not contact the police: MVA_No_police
+---
+question: When did you contact the police?
+
+fields:
+  - no label: MVA_date_of_police_contact
+    datatype: date
+---
+question: Have you made an insurance claim?
+
+fields:
+  - no label: MVA_Insurance_claim
+    datatype: radio
+    choices: 
+      - Yes, I made an insurance claim: MVA_Yes_Insurance_claim
+      - No, I did not made an insurance claim: MVA_No_Insurance_claim
+---
+# This code block asks potential Clients requestions regarding the National Redress Scheme
+question: Name in the institution (if different to what was submitted earlier)
+
+fields: 
+  - no label: NRS_Name
+---
+question: Placement type
+fields:
+  - Where were you placed when the abuse took place?: NRS_placement_type
+    datatype: checkboxes
+    choices:
+      - Orphanage/Children's Home
+      - Mission
+      - Foster Care
+      - Out of Home Care
+      - Relative or Kinship Care
+      - Youth Detention
+      - Other
+---
+question: What was the name of the institution(s) where the sexual abuse took place?
+
+fields: 
+  - no label: NRS_institution_abuse
+---
+question: What was the full name(s) of the perpetrator(s)
+
+fields: 
+  - no label: NRS_perpetrator
+---
+question: What was the approximate date the abuse took place?
+  
+fields:
+  - no label: NRS_date_of_offence
+    datatype: date
+---
+question: How old were you when the sexual abuse took place?
+
+fields:
+  - no label: NRS_age
+    datatype: integer
+---
+question: Over what period of time did the sexual abuse take place?
+subquestion: |
+  Please select from the time periods below.
+fields:
+  - no label: NRS_abuse_period
+    input type: radio
+    choices:
+     - Less than a year
+     - 1 - 5 years
+     - 5 - 10 years
+     - 10 - 15 years
+     - More than 15 years
+---
+question: Have you received any prior payment for the sexual abuse you suffered as a child?
+  
+fields:
+  - no label: NRS_prior_payment
+    datatype: radio
+    choices:
+    - Yes, the incident was reported to the police: NRS_prior_payment_received
+    - No, the incident was not reported to the police: NRS_prior_payment_not_received
+---
+question: If so, please provide the details of the payment.
+
+fields:
+  - no label: NRS_Payments
+---
+
+
+
+
