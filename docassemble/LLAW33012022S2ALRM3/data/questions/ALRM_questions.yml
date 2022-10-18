@@ -286,7 +286,7 @@ fields:
       - Yes, I made an insurance claim: MVA_Yes_Insurance_claim
       - No, I did not made an insurance claim: MVA_No_Insurance_claim
 ---
-# This code block asks potential Clients requestions regarding the National Redress Scheme
+# This code block asks potential Clients questions regarding the National Redress Scheme
 question: National Redress Scheme 
 subquestion: |
   Name in the institution (if different to what was submitted earlier)
@@ -372,7 +372,157 @@ subquestion: |
 fields:
   - no label: NRS_Payments
 ---
+# This code block asks the potential client questions about their family issues
+question: Family Law
+subquestion: |
+  What is the name of your former partner?
+   
+fields:
+  - no label: FL_partner_name
+---
+question: Family Law
+subquestion: |
+  What is the Date of Birth of your former partner?
+  
+fields:
+  - no label: FL_partner_date
+    datatype: date
+---
+question: Family Law
+subquestion: |
+  Are there children from your relationship?
+  
+fields:
+  - no label: FL_children
+    datatype: radio
+    choices:
+      - Yes, I have children from the relationship: FL_Yes_Children
+      - No, I have children from the relationship: FL_No_Children
+---
+question: Family Law
+subquestion: |
+  What is your child's name?
 
+fields:
+  - no label: FL_child_name
+---
+question: Family Law
+subquestion: |
+  What is the date of birth of your child?
+  
+fields:
+  - no label: FL_child_date
+    datatype: date
+---
+question: Family Law
+subquestion: |
+  When did your relationship start?
 
+fields:
+  - no label: FL_date_relationship
+    datatype: date
+---
+question: Family Law
+subquestion: |
+  When was the date of separation?
 
+fields:
+  - no label: FL_separation_date
+    datatype: date
+---
+# The datatype 'checkboxes' allows the client to choose from a list of potential reasons
+question: Family Law
+subquestion: |
+  What was the reason for separation?
 
+fields:
+  - no label: FL_separation_reason
+    datatype: checkboxes
+    choices:
+      - Amicable split
+      - Drug use
+      - Alcohol use
+      - Family violence, including domestic violence
+      - Infidelity
+      - Other
+---
+question: Family Law
+subquestion: |
+  Was there an intervention order?
+  
+fields: 
+  - no label: FL_intervention_order
+    datatype: radio
+    choices:
+      - Yes, there was an intervention order: FL_Yes_intervention_order
+      - No, there was not an intervention order: FL_No_intervention_order
+---
+# This code block asks potential clients further questions if they have chosen Other
+question: Other
+subquestion: |
+  What is the issue?
+
+fields:
+  - no label: FL_other_issue
+    input type: area
+---
+question: Other
+subquestion: |
+  Was there Police/Welfare involvement?
+
+fields:
+  - no label: FL_involvement_police
+    datatype: radio
+    choices:
+      - Yes, there was Police/Welfare involvement: FL_Yes_involvement_police
+      - No, there was no Police/Welfare involvement: FL_No_involvement_police
+---
+question: Other
+subquestion: |
+  Has this issue been to the Family Court?
+
+fields: 
+  - no label: Other_FC
+    datatype: radio
+    choices:
+      - Yes, this issue has been to the Family Court: FL_Yes_FC
+      - No, this issue has not been to the Family Court: FL_No_FC
+---
+question: Other
+subquestion: |
+  If so, what year did this issue go to the Family Court?
+  
+fields: 
+  - no label: Other_FC_date
+    datatype: date
+---
+question: Other
+subquestion: |
+  Has this issue been to the Family Dispute Resolution?
+
+fields:
+  - no label: Other_FDS
+    datatype: radio
+    choices:
+      - Yes, this issue has been to the Family Dispute Resolution: Other_Yes_FDS
+      - No, this issue has not been to the Family Dispute Resolution: Other_No_FDS
+---
+question: Other
+subquestion: |
+  Have you had a previous Lawyer?
+
+fields:
+  - no label: Other_lawyer
+    datatype: radio
+    choices:
+      - Yes, I have used a previous lawyer: Other_Yes_lawyer
+      - No, I have not used a previous lawyer: Other_No_lawyer
+---
+question: Other
+subquestion: |
+  If yes, what are the details of the lawyer? I.e. their name, job title and law firm, if possible.
+  
+fields:
+  - no label: Other_lawyer_title
+    input type: area
+---

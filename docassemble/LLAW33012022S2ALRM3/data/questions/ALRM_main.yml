@@ -132,7 +132,7 @@ subquestion: |
   % endif
   Insurance Claim|${MVA_Insurance_claim}
   % if ALRMLegalissue['National Redress Scheme (sexual abuse clients)']:
-  Name in institution|${NRS_Name}
+  Name of institution|${NRS_Name}
   % endif
   Placement Type|${NRS_placement_type}
   Name of Institution|${NRS_institution_abuse}
@@ -142,7 +142,33 @@ subquestion: |
   Period of abuse|${NRS_abuse_period}
   National Redress Scheme Prior Payments|${NRS_prior_payment}
   % if NRS_prior_payment == 'NRS_prior_payment_received':
-  Deatils of Payment|${NRS_Payments}
+  Details of Payment|${NRS_Payments}
+  % endif
+  % if ALRMLegalissue['Family Law']:
+  Name of your former partner|${FL_partner_name}
+  % endif
+  Former partner's Date of Birth|${FL_partner_date}
+  Children from the relationship|${FL_children}
+  % if FL_children == 'FL_Yes_Children':
+  Child name|${FL_child_name}
+  Child Date of Birth|${FL_child_date}
+  % endif
+  Date of commencement of relationship|${FL_date_relationship}
+  Date of separation|${FL_separation_date}
+  Reason for separation|${FL_separation_reason}
+  Intervention order|${FL_intervention_order}
+  % if ALRMLegalissue['Other']:
+  What is the issue|${FL_other_issue}
+  % endif
+  Welfare/Police involvement|${FL_involvement_police}
+  Family Court|${Other_FC}
+  % if Other_FC == 'FL_Yes_FC':
+  Date in Family Court|${Other_FC_date}
+  % endif
+  Family Dispute Resolution|${Other_FDS}
+  Previous lawyer|${Other_lawyer}
+  % if Other_lawyer == 'Other_Yes_lawyer':
+  Lawyer details|${Other_lawyer_title}
   % endif
 
 
