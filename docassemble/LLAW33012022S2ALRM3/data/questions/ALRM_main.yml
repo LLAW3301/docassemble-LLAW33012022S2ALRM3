@@ -144,8 +144,23 @@ subquestion: |
   % if NRS_prior_payment == 'NRS_prior_payment_received':
   Deatils of Payment|${NRS_Payments}
   % endif
-
-
+  % if ALRMLegalissue['Child Protection']:
+  Reomval of child|${ALRM3_dateofremoval}
+  Reason for removal|${ALRM3_reasonforremoval}
+  Family violence|${ALRM3_familyviolence}
+  Drugs and alcohol|${ALRM3_drugsandalcohol}
+  Mental health issues|${ALRM3_mentalhealth}
+  Documents|${ALRM3_documents}
+  Current order|${ALRM3_ordertime}
+  Court date|${ALRM3_nextcourtdate}
+  % endif
+  % if ALRMLegalissue['Personal Injury']:
+  Type of accident|${PItypeofaccident}
+  Type of injury|${PItypeofinjury}
+  Date of accident|${PI_date_of_injury}
+  Prior injuried|${PI_prior_injury}
+  % endif
+  
   Thank you for taking the time to complete some questions about you and your issue. We will be in touch soon!
   
   If you do require any emergency assistance please call our 24 hour service on (08) 8113 3777. Or alternatively on our free call (SA only) on 1800 643 222. 

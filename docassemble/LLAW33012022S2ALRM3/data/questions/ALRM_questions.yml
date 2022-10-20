@@ -372,7 +372,151 @@ subquestion: |
 fields:
   - no label: NRS_Payments
 ---
+# This code block asks potential clients questions pertaining to child protection
+---
+mandatory: true
+question: Child Protection
+subquestion:  |
+  When were the children removed from your care?
 
+fields:
+  - no label: ALRM3_dateofremoval
+    datatype: date
+---
+mandatory: true
+question: Child Protection
+Subquestion:   | 
+  What was the reasonal for removal? Please be keep this breif. You will be contacted by a solicitor for further details. 
 
+fields:
+  - no label: ALRM3_reasonforremoval
+    datatype: area
+---
+# a 'radio' allows a user to select one choice only
+question: Child Protection
+Subquestion:   |
+  Was family violence a factor in the childs removal?
+
+fields:
+  - no label: ALRM3_familyviolence
+    datatype: radio
+    choices:
+    - Yes
+    - No
+---
+question: Child Protection
+Subquestion:  |
+  Were drugs and alcohol are contributing factor to the childs removal?
+
+fields:
+  - no label: ALRM3_drugsandalcohol
+    datatype: radio
+    choices:
+    - Yes
+    - No
+---
+question: Child Protection
+subquestion:  |
+  Do you suffer from mental health issues?
+  
+fields:
+  - no label: ALRM3_mentalhealth
+    datatype: radio
+    choices:
+    - Yes
+    - No
+--- 
+question: Child Protection
+subquestion:  |
+  Do you have documents?
+
+fields:
+  - no label: ALRM3_documents
+    datatype: radio
+    choices:
+    - Yes
+    - No
+---
+question: Child Protection
+subquestion:  |
+  What order is currently in place?
+  
+fields:
+  - no label: ALRM3_ordertime
+    datatype: radio
+    choices:
+    - 3 months
+    - 12 months
+    - 18 months
+    - other
+---
+question: Child Protection
+subquestion:  |
+  Do you know when the next court date is?
+  
+fields:
+  - do you have a court date?: ALRM3_nextcourtdate
+    datatype: radio
+    choices:
+    - Yes, i know the next court date: yes
+    - No, i don't know the next court date: no
+  - no label: ALRM3_courdate
+    datatype: date
+    show if: 
+      variable: ALRM3_nextcourtdate
+      is: yes
+---  
+# This code block asks potential clients personal injury related questions
+---
+question: Personal Injury
+subquestion:  |
+  What type of accident caused your injury?
+
+fields:
+  - What type of accident caused your injury?: PItypeofaccident
+    datatype: checkboxes 
+    choices:
+      - Motor vehicle accident
+      - Workplace accident
+      - Medical negligence
+      - Animal related accident
+      - Assault
+      - Slip or fall
+      - Other
+--- 
+question: Personal Injury
+subquestion:  |
+  What type of injury did you sustain as a result of the accident?
+
+fields:
+  - What type of injury do you have as a result of the accident?: PItypeofinjury
+    datatype: checkbox 
+    choices:
+    - Mental injury
+    - Broken bone
+    - Muscle related injury
+    - Neck and back related injury
+    - Other
+--- 
+# A 'date' datatype allows a user to input the date
+question: Personal Injury
+subquestion:  |
+  What was the date of the accident causing your injury?
+  
+fields:
+  - no label: PI_date_of_injury
+    datatype: date
+--- 
+question: Personal Injury 
+subquestion:  |
+  Did you have any injuries prior to the accident?
+  
+fields:
+  - no label: PI_prior_injury
+    datatype: radio
+    choices:
+    - yes, I had injuries prior to the accident: Prior_injury 
+    - No, I did not have any injuries prior to the accident: No_prior_injury 
+--- 
 
 
