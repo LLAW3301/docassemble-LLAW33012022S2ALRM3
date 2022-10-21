@@ -1,0 +1,69 @@
+---
+question: Date of incident
+subquestion: |
+  Please enter the date of the incident
+fields:
+  - no label: PC_date
+    datatype: date
+---
+question: Have you already made a police complaint?
+subquestion: |
+fields:
+  - no label: PC_complaint
+    datatype: radio
+    choices:
+      - Yes
+      - No
+---
+question: If yes, please provide the officer(s) name
+subquestion: |
+fields:
+  - no label: PC_name
+---
+question: The police officer(s) badge number
+subquestion: |
+fields:
+  - no label: PC_badge
+---
+question: Please provide the name of the police station
+subquestion: |
+fields:
+  - no label: PC_station_name
+---
+question: Details of what happened
+subquestion: |
+fields:
+  - no label: PC_details
+---
+question: Did you sustain any injuries?
+subquestion: |
+fields:
+  - no label: PC_injuries
+    datatype: radio
+    choices:
+      - Yes
+      - No
+---
+question: Did you require medical attention?
+subquestion: |
+fields:
+  - no label: PC_medical
+    datatype: radio
+    choices:
+      - Yes
+      - No
+---
+question: Were you taken to hospital by police?
+subquestion: |
+fields:
+  - no label: PC_hospital_police
+    datatype: radio
+    choices:
+      - Yes
+      - No
+---
+question: If yes, which hospital?
+subquestion: |
+fields:
+  - no label: PC_hospital
+---

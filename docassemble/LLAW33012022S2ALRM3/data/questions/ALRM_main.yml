@@ -3,6 +3,7 @@
 include:
  - ALRM_questions.yml
  - ALRM_EMAIL.yml
+ - police_complaint.yml
 ---
 objects:
   - endpoint: DADict
@@ -100,7 +101,6 @@ subquestion: |
   Legal Issue|${ALRMLegalissue.true_values()}
   % if ALRMLegalissue ['Victims of Crime']:
   Incident reported to police|${VOC_incident_report}
-  % endif
   Date of offence|${VOC_date_of_offence}
   Perpetrator|${VOC_perpetrator}
   Offender's Date of Birth|${VOC_dateofbirth_offender}
@@ -112,11 +112,11 @@ subquestion: |
   % endif
   % if VOC_GP == 'VOC_Yes_GP':
   Name of General Practitioner|${VOC_GP_name}
-  % endif
   Medical Practice|{VOC_Name_MP}
+  % endif
+  % endif
   % if ALRMLegalissue['Motor Vehicle Accident Claims']:
   Date of offence|${MVA_date_of_offence}
-  % endif
   Name of other Party|${MVA_party}
   Registration of perpetrator|${MVA_registration}
   Cause of Accident|${MVA_accident}
@@ -131,9 +131,9 @@ subquestion: |
   Date of Police Contact|${MVA_date_of_police_contact}
   % endif
   Insurance Claim|${MVA_Insurance_claim}
+  % endif
   % if ALRMLegalissue['National Redress Scheme (sexual abuse clients)']:
   Name of institution|${NRS_Name}
-  % endif
   Placement Type|${NRS_placement_type}
   Name of Institution|${NRS_institution_abuse}
   Name of Perpetrator|${NRS_perpetrator}
@@ -144,9 +144,9 @@ subquestion: |
   % if NRS_prior_payment == 'NRS_prior_payment_received':
   Details of Payment|${NRS_Payments}
   % endif
+  % endif
   % if ALRMLegalissue['Family Law']:
   Name of your former partner|${FL_partner_name}
-  % endif
   Former partner's Date of Birth|${FL_partner_date}
   Children from the relationship|${FL_children}
   % if FL_children == 'FL_Yes_Children':
@@ -157,9 +157,9 @@ subquestion: |
   Date of separation|${FL_separation_date}
   Reason for separation|${FL_separation_reason}
   Intervention order|${FL_intervention_order}
+  % endif
   % if ALRMLegalissue['Other']:
   What is the issue|${FL_other_issue}
-  % endif
   Welfare/Police involvement|${FL_involvement_police}
   Family Court|${Other_FC}
   % if Other_FC == 'FL_Yes_FC':
@@ -170,8 +170,28 @@ subquestion: |
   % if Other_lawyer == 'Other_Yes_lawyer':
   Lawyer details|${Other_lawyer_title}
   % endif
+  % endif
+  % if ALRMLegalissue['Police Complaint']:
+  Date of Incident |${PC_date}
+  Police Complaint Made |${PC_complaint}
+  Police Officer(s) Name |${PC_name}
+  Police Officer(s) Badge Number |${PC_badge}
+  Police Station |${PC_station_name}
+  Details |${PC_details}
+  Injuries Sustained |${PC_injuries}
+  Medical Attention Required |${PC_medical}
+  Taken to Hospital |${PC_hospital_police}
+  Hospital |${PC_hospital}
+  % endif
 
-
+  % if ALRMLegalissue['Housing Disputes']:
+  If you require assistance with a housing dispute claim, please contact ALRM on 1800 643 222.
+  % endif
+  
+  % if ALRMLegalissue ['Stolen Generations']:
+  If you require assistance with a stolen generation claim, please contact ALRM on 1800 643 222.
+  % endif
+  
   Thank you for taking the time to complete some questions about you and your issue. We will be in touch soon!
   
   If you do require any emergency assistance please call our 24 hour service on (08) 8113 3777. Or alternatively on our free call (SA only) on 1800 643 222. 
