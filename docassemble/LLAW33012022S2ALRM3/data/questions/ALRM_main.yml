@@ -173,9 +173,25 @@ subquestion: |
   % endif
   % if ALRMLegalissue['Police Complaint']:
   Date of Incident |${PC_date}
+  Police Complaint Made |${PC_complaint}
+  Police Officer(s) Name |${PC_name}
+  Police Officer(s) Badge Number |${PC_badge}
+  Police Station |${PC_station_name}
+  Details |${PC_details}
+  Injuries Sustained |${PC_injuries}
+  Medical Attention Required |${PC_medical}
+  Taken to Hospital |${PC_hospital_police}
+  Hospital |${PC_hospital}
   % endif
 
-
+  % if ALRMLegalissue['Housing Disputes']:
+  If you require assistance with a housing dispute claim, please contact ALRM on 1800 643 222.
+  % endif
+  
+  % if ALRMLegalissue ['Stolen Generations']:
+  If you require assistance with a stolen generation claim, please contact ALRM on 1800 643 222.
+  % endif
+  
   Thank you for taking the time to complete some questions about you and your issue. We will be in touch soon!
   
   If you do require any emergency assistance please call our 24 hour service on (08) 8113 3777. Or alternatively on our free call (SA only) on 1800 643 222. 
