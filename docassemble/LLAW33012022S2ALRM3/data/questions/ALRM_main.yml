@@ -170,6 +170,19 @@ subquestion: |
   % if Other_lawyer == 'Other_Yes_lawyer':
   Lawyer details|${Other_lawyer_title}
   % endif
+  % if ALRMLegalissue['Discrimination']:
+  What is the date of incident|${Discrimination_date_incident}
+  % endif
+  Where incident occurred|${Discrimination_address}
+  Incident reported to police|${Discrimination_reported}
+  % if Discrimination_reported == 'Discrimination_No_reported':
+  Incident reported to a person|${Discrimination_person}
+  % endif
+  % if Discrimination_person == 'Discrimination_Yes_person':
+  Name of person reported to|${Discrimination_name_person}
+  % endif
+  Name of offender|${Discrimination_name_offender}
+  Details of incident|${Discrimination_details}
   % endif
   % if ALRMLegalissue['Police Complaint']:
   Date of Incident |${PC_date}
