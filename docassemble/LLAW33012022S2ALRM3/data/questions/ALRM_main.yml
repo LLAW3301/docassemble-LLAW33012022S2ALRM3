@@ -174,6 +174,34 @@ subquestion: |
   % if ALRMLegalissue['Police Complaint']:
   Date of Incident |${PC_date}
   % endif
+  % if ALRMLegalissue['Employment']:
+  Place of work|${EMPworkplace}
+  Employment Type|${EMPworktype}
+  Job Title|${EMPjobrole}
+  Job Role Description|${EMPjobroleinfo}
+  Union Membership|${EMPunion}
+  Union name|${EMPunionname}
+  Ongoing Issue|${EMPongoing}
+  Raised Issue with Anyone|${EMPraised}
+  Anything happen when raised|${EMPhappened}
+  Extra information|${EMPextrainfo}
+  % endif
+  % if ALRMLegalissue['Child Protection']:
+  Reomval of child|${ALRM3_dateofremoval}
+  Reason for removal|${ALRM3_reasonforremoval}
+  Family violence|${ALRM3_familyviolence}
+  Drugs and alcohol|${ALRM3_drugsandalcohol}
+  Mental health issues|${ALRM3_mentalhealth}
+  Documents|${ALRM3_documents}
+  Current order|${ALRM3_ordertime}
+  Court date|${ALRM3_nextcourtdate}
+  % endif
+  % if ALRMLegalissue['Personal Injury']:
+  Type of accident|${PItypeofaccident}
+  Type of injury|${PItypeofinjury}
+  Date of accident|${PI_date_of_injury}
+  Prior injuried|${PI_prior_injury}
+  % endif
 
 
   Thank you for taking the time to complete some questions about you and your issue. We will be in touch soon!
