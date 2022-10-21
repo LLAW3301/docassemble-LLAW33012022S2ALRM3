@@ -528,3 +528,63 @@ fields:
   - no label: Other_lawyer_title
     input type: area
 ---
+---
+question: Discrimination
+subquestion: |
+  What is the date of your incident?
+  
+fields:
+  - no label: Discrimination_date_incident
+    datatype: date
+---
+question: Discrimination
+subquestion: |
+  Where did the incident occur?
+
+fields:
+  - address: Discrimination_address
+---
+question: Discrimination
+subquestion: |
+  Was the incident reported to the police?
+
+fields:
+  - no label: Discrimination_reported
+    datatype: radio
+    choices:
+      - Yes: Discrimination_Yes_reported
+      - No: Discrimination_No_reported
+---
+question: Discrimination
+subquestion: |
+  Was the incident reported to another person?
+
+fields:
+  - no label: Discrimination_person
+    datatype: radio
+    choices:
+      - Yes: Discrimination_Yes_person
+      - No: Discrimination_No_person
+---
+question: Discrimination
+subquestion: |
+  Who was the incident reported to?
+
+fields:
+  - no label: Discrimination_name_person
+---
+question: Discrimination
+subquestion: |
+  Name of offender, if known.
+
+fields:
+  - no label: Discrimination_name_offender
+---
+question: Discrimination
+subquestion: |
+  Could you please list some details of the incident of discrimination.
+
+fields:
+  - no label: Discrimination_details
+    input type: area
+---
