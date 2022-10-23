@@ -1,0 +1,74 @@
+@media (min-width: 768px) {
+  div.table-responsive {
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+    overflow-x: visible;
+  }
+  table.mytable {
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
+  }
+}
+.navbar{
+  background-color: rgb(0,0,0) !important;
+}
+
+.navbar .navbar-brand{
+    color : rgb(255,255,255);
+}
+.navbar .nav-item a{
+    color: rgb(255,255,255) !important;
+}
+
+.navbar .dropdown-menu{
+    background-color: rgba(193,49,40,0.4) !important;
+}
+
+.dropdown-item:hover{
+    background-color: rgba(193,49,40,0.6) !important;
+}
+
+.text-muted{
+  color: rgb(255,255,255) !important;
+}
+
+.btn-danger{
+  color: rgb(193,49,40);
+  background-color: rgb(0,0,0);
+  border-color: rgb(0,0,0);
+}
+
+.btn-danger:hover{
+  background-color: rgb(0,0,0);
+  border-color: rgb(0,0,0);
+}
+
+.btn-warning{
+  color: rgb(253,248,48);
+  background-color: rgb(0,0,0);
+  border-color: rgb(0,0,0);
+}
+
+.btn-warning:hover{
+  color: rgb(253,248,48);
+  background-color: rgb(0,0,0);
+  border-color: rgb(0,0,0);
+}
+
+.btn-primary{
+  color: rgb(253,248,48);
+  background-color: rgb(0,0,0);
+  border-color: rgb(0,0,0);
+}
+
+.btn-primary:hover{
+  color: rgb(253,248,48);
+  background-color: rgb(0,0,0);
+  border-color: rgb(0,0,0);
+}
+
+.svg-inline--fa.fa-question-circle.fa-w-16{
+   color: rgb(253,248,48);
+}

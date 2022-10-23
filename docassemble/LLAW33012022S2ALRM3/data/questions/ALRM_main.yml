@@ -1,9 +1,50 @@
-# This application is developed for potential clients who are seeking legal services from the ALRM
 ---
+metadata:
+  title: |
+    ALRM
+  description: |
+    An application that is developed for potential clients who are seeking legal services from the ALRM
+  authors:
+    - name: Yasmin Popovich, Blaze Ferguson, Nathan Fiedler, Tiana Merlino, Georgina Burfield
+      organization: Flinders university in conjuction with the Aboriginal Legal Rights Movement
+  revision_date: 24-10-2022
+---
+# These are added to this .yml file that runs the app to simplify reading
 include:
  - ALRM_questions.yml
  - ALRM_EMAIL.yml
  - police_complaint.yml
+---
+# Modify the post default screen part to attribute work to Flinders and the client
+# This can be removed if the application is commissioned 
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://news.flinders.edu.au/wp-content/uploads/2022/07/Flinders_University_Logo_Horizontal_RGB_Master-2048x600.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: right">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with ALRM
+    </i></small></cite>
+    </div>
+    </div>
+---
+# CSS:Changes the sytle of the application and width of table
+# debug: Hides the source button 
+# hiding the standard menu as end users do not need to log in to the system to run your app
+features:
+  css: ALRM.css
+  debug: False
+  hide standard menu: True
+---
+# Imputs the logo
+objects:
+  - ALRMlogo: DAStaticFile.using(filename='logo.webp')
+---
+#dictates the size of the FLPN logo
+mandatory: true
+code: |
+  set_parts(logo='<img src="' + ALRMlogo.url_for() + '" style="height: 50px;">')
 ---
 objects:
   - endpoint: DADict
@@ -18,12 +59,12 @@ code: |
 ---
 #This is our welcome screen, which users will see first upon running our application
 event: ALRMwelcome_screen
-question: Welcome to the Aboriginal Legal Rights Movement
+question: Welcome to the Aboriginal Legal Rights Movement 
 subquestion: |
-  The ALRM helps Aboriginal people who have come into contact with the Police or the Courts. ALRM provide representation, prison advice and after-hours custody advice service. 
+  The Aboriginal Legal Rights Movement ('ALRM') helps Aboriginal and Torres Strait Islander people who have come into contact with the Police or the Courts. ALRM provide representation, prison advice and after-hours custody advice service. 
   
   
-  ALRM helps Aboriginal people who have come into contact with the Police or the Courts.   We provide representation, prison advice and after-hours custody advice service.
+  ALRM helps Aboriginal and Torres Strait Islander people who have come into contact with the Police or the Courts. We provide representation, prison advice and after-hours custody advice service.
 
   This application can be used to gather information and determine whether you are eligible for legal support through the ALRM. 
 
@@ -84,6 +125,7 @@ buttons:
 ---
 # This is where we are going to display the answers the user has entered
 # Note: We still need to ask these questions.
+table css class: table table-striped
 event: endpoint['eligible']
 question: The information you have provided us
 subquestion: |
@@ -158,19 +200,6 @@ subquestion: |
   Reason for separation|${FL_separation_reason}
   Intervention order|${FL_intervention_order}
   % endif
-  % if ALRMLegalissue['Other']:
-  What is the issue|${FL_other_issue}
-  Welfare/Police involvement|${FL_involvement_police}
-  Family Court|${Other_FC}
-  % if Other_FC == 'FL_Yes_FC':
-  Date in Family Court|${Other_FC_date}
-  % endif
-  Family Dispute Resolution|${Other_FDS}
-  Previous lawyer|${Other_lawyer}
-  % if Other_lawyer == 'Other_Yes_lawyer':
-  Lawyer details|${Other_lawyer_title}
-  % endif
-  % endif
   % if ALRMLegalissue['Police Complaint']:
   Date of Incident |${PC_date}
   % endif
@@ -187,26 +216,53 @@ subquestion: |
   Extra information|${EMPextrainfo}
   % endif
   % if ALRMLegalissue['Child Protection']:
-  Reomval of child|${ALRM3_dateofremoval}
-  Reason for removal|${ALRM3_reasonforremoval}
-  Family violence|${ALRM3_familyviolence}
-  Drugs and alcohol|${ALRM3_drugsandalcohol}
-  Mental health issues|${ALRM3_mentalhealth}
-  Documents|${ALRM3_documents}
-  Current order|${ALRM3_ordertime}
-  Court date|${ALRM3_nextcourtdate}
+  Children(s) name(s)|${CP_child_name}
+  Children(s) Date of Birth|${CP_child_date}
+  Removal of child|${CP_dateofremoval}
+  Reason for removal|${CP_reasonforremoval}
+  Family violence|${CP_familyviolence}
+  Drugs and alcohol|${CP_drugsandalcohol}
+  Mental health issues|${CP_mentalhealth}
+  Documents|${CP_documents}
+  Current order|${CP_ordertime}
+  Court date|${CP_nextcourtdate}
   % endif
   % if ALRMLegalissue['Personal Injury']:
   Type of accident|${PItypeofaccident}
   Type of injury|${PItypeofinjury}
   Date of accident|${PI_date_of_injury}
-  Prior injuried|${PI_prior_injury}
+  Prior injuries|${PI_prior_injury}
   % endif
-
+  % if ALRMLegalissue['Discrimination']:
+  What is the date of incident|${Discrimination_date_incident}
+  Where incident occurred|${Discrimination_address}
+  Incident reported to police|${Discrimination_reported}
+  % if Discrimination_reported == 'Discrimination_No_reported':
+  Incident reported to a person|${Discrimination_person}
+  % endif
+  % if Discrimination_person == 'Discrimination_Yes_person':
+  Name of person reported to|${Discrimination_name_person}
+  % endif
+  Name of offender|${Discrimination_name_offender}
+  Details of incident|${Discrimination_details}
+  % endif
+  % if ALRMLegalissue['Other']:
+  What is the issue|${FL_other_issue}
+  Welfare/Police involvement|${FL_involvement_police}
+  Family Court|${Other_FC}
+  % if Other_FC == 'FL_Yes_FC':
+  Date in Family Court|${Other_FC_date}
+  % endif
+  Family Dispute Resolution|${Other_FDS}
+  Previous lawyer|${Other_lawyer}
+  % if Other_lawyer == 'Other_Yes_lawyer':
+  Lawyer details|${Other_lawyer_title}
+  % endif
+  % endif
 
   Thank you for taking the time to complete some questions about you and your issue. We will be in touch soon!
   
-  If you do require any emergency assistance please call our 24 hour service on (08) 8113 3777. Or alternatively on our free call (SA only) on 1800 643 222. 
+  If you do require any emergency assistance please call our 24 hour service on (08) 8113 3777. Or alternatively on our free call (SA only number) on 1800 643 222. 
   
   % if email_sent_ok:
   The e-mail was sent successfully.

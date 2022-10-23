@@ -15,4 +15,121 @@ content: |
   Address|${NRFaddress}
   Contact Number|${NRFphone}
   Email|${NRFemail}
+  Legal Issue|${ALRMLegalissue.true_values()}
+  % if ALRMLegalissue ['Victims of Crime']:
+  Incident reported to police|${VOC_incident_report}
+  Date of offence|${VOC_date_of_offence}
+  Perpetrator|${VOC_perpetrator}
+  Offender's Date of Birth|${VOC_dateofbirth_offender}
+  Offender charged and convicted|${VOC_offence}
+  % if VOC_offence == 'VOC_Yes_CC':
+  Injuries sustained|${VOC_injuries}
+  Hospital attendance|${VOC_hospital}
+  General Practitioner|${VOC_GP}
+  % endif
+  % if VOC_GP == 'VOC_Yes_GP':
+  Name of General Practitioner|${VOC_GP_name}
+  Medical Practice|{VOC_Name_MP}
+  % endif
+  % endif
+  % if ALRMLegalissue['Motor Vehicle Accident Claims']:
+  Date of offence|${MVA_date_of_offence}
+  Name of other Party|${MVA_party}
+  Registration of perpetrator|${MVA_registration}
+  Cause of Accident|${MVA_accident}
+  % if MVA_injury == 'MVA_Yes_Injury':
+  Injury Details|${MVA_detail_injury}
+  % endif
+  Other party's injuries|${MVA_injury_other}
+  Exchange of details|${MVA_details_other}
+  Medical help required|${MVA_medical_help}
+  Police contacted|${MVA_police}
+  % if MVA_police == 'MVA_Yes_police':
+  Date of Police Contact|${MVA_date_of_police_contact}
+  % endif
+  Insurance Claim|${MVA_Insurance_claim}
+  % endif
+  % if ALRMLegalissue['National Redress Scheme (sexual abuse clients)']:
+  Name of institution|${NRS_Name}
+  Placement Type|${NRS_placement_type}
+  Name of Institution|${NRS_institution_abuse}
+  Name of Perpetrator|${NRS_perpetrator}
+  Date of offence|${NRS_date_of_offence}
+  Age of abuse|${NRS_age}
+  Period of abuse|${NRS_abuse_period}
+  National Redress Scheme Prior Payments|${NRS_prior_payment}
+  % if NRS_prior_payment == 'NRS_prior_payment_received':
+  Details of Payment|${NRS_Payments}
+  % endif
+  % endif
+  % if ALRMLegalissue['Family Law']:
+  Name of your former partner|${FL_partner_name}
+  Former partner's Date of Birth|${FL_partner_date}
+  Children from the relationship|${FL_children}
+  % if FL_children == 'FL_Yes_Children':
+  Child name|${FL_child_name}
+  Child Date of Birth|${FL_child_date}
+  % endif
+  Date of commencement of relationship|${FL_date_relationship}
+  Date of separation|${FL_separation_date}
+  Reason for separation|${FL_separation_reason}
+  Intervention order|${FL_intervention_order}
+  % endif
+  % if ALRMLegalissue['Police Complaint']:
+  Date of Incident |${PC_date}
+  % endif
+  % if ALRMLegalissue['Employment']:
+  Place of work|${EMPworkplace}
+  Employment Type|${EMPworktype}
+  Job Title|${EMPjobrole}
+  Job Role Description|${EMPjobroleinfo}
+  Union Membership|${EMPunion}
+  Union name|${EMPunionname}
+  Ongoing Issue|${EMPongoing}
+  Raised Issue with Anyone|${EMPraised}
+  Anything happen when raised|${EMPhappened}
+  Extra information|${EMPextrainfo}
+  % endif
+  % if ALRMLegalissue['Child Protection']:
+  Reomval of child|${CP_dateofremoval}
+  Reason for removal|${CP_reasonforremoval}
+  Family violence|${CP_familyviolence}
+  Drugs and alcohol|${CP_drugsandalcohol}
+  Mental health issues|${CP_mentalhealth}
+  Documents|${CP_documents}
+  Current order|${CP_ordertime}
+  Court date|${CP_nextcourtdate}
+  % endif
+  % if ALRMLegalissue['Personal Injury']:
+  Type of accident|${PItypeofaccident}
+  Type of injury|${PItypeofinjury}
+  Date of accident|${PI_date_of_injury}
+  Prior injuried|${PI_prior_injury}
+  % endif
+  % if ALRMLegalissue['Discrimination']:
+  What is the date of incident|${Discrimination_date_incident}
+  Where incident occurred|${Discrimination_address}
+  Incident reported to police|${Discrimination_reported}
+  % if Discrimination_reported == 'Discrimination_No_reported':
+  Incident reported to a person|${Discrimination_person}
+  % endif
+  % if Discrimination_person == 'Discrimination_Yes_person':
+  Name of person reported to|${Discrimination_name_person}
+  % endif
+  Name of offender|${Discrimination_name_offender}
+  Details of incident|${Discrimination_details}
+  % endif
+  % if ALRMLegalissue['Other']:
+  What is the issue|${FL_other_issue}
+  Welfare/Police involvement|${FL_involvement_police}
+  Family Court|${Other_FC}
+  % if Other_FC == 'FL_Yes_FC':
+  Date in Family Court|${Other_FC_date}
+  % endif
+  Family Dispute Resolution|${Other_FDS}
+  Previous lawyer|${Other_lawyer}
+  % if Other_lawyer == 'Other_Yes_lawyer':
+  Lawyer details|${Other_lawyer_title}
+  % endif
+  % endif
 ---
