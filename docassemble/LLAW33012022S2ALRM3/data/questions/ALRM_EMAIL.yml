@@ -4,7 +4,7 @@ code: |
 ---
 template: notification
 subject: |
-  Greetings, ${ NRFname }!
+  New Client Questionnaire 
 content: |
   Question|Answer
   ---|---
