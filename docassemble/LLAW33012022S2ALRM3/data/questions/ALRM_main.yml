@@ -61,10 +61,7 @@ code: |
 event: ALRMwelcome_screen
 question: Welcome to the Aboriginal Legal Rights Movement 
 subquestion: |
-  The Aboriginal Legal Rights Movement ('ALRM') helps Aboriginal and Torres Strait Islander people who have come into contact with the Police or the Courts. ALRM provide representation, prison advice and after-hours custody advice service. 
-  
-  
-  ALRM helps Aboriginal and Torres Strait Islander people who have come into contact with the Police or the Courts. We provide representation, prison advice and after-hours custody advice service.
+  The Aboriginal Legal Rights Movement ('ALRM') helps Aboriginal and Torres Strait Islander people who have come into contact with the Police or the Courts. We provide representation, prison advice and advice for After Hours Custody Service. 
 
   This application can be used to gather information and determine whether you are eligible for legal support through the ALRM. 
 
@@ -100,16 +97,18 @@ question: You are not eligible
 subquestion: |
   Unfortunately you are not eligible to receive our support.
   
-  The Aborgional Legal Rights Movement can only support clients that identify as an Aborgional or Torress Strait Islander person and who currently reside in South Australia. 
+  The Aboriginal Legal Rights Movement can only support clients that identify as an Aboriginal or as a Torres Strait Islander person AND who currently resides in South Australia. 
   However, we hope these legal services may be able to assist you:
   
-   1. Legal Services Commission of SA (LSC) provides legal services for people who can't afford to pay for legal representation.
+   1. Legal Services Commission of SA (LSC) provides legal services for people who cannot afford to pay for legal representation.
     
         Phone: 1300 366 424
     
-   2. Community Justice Services provide legal advice, assistance and referral to community members who might not otherwise get the help  they need. Most centres provide services free of charge.
+   2. Community Justice Services provide legal advice, assistance and referral to community members who might not otherwise get the help they need. Most centres provide services free of charge.
+        
+        Phone: 1300 850 650
     
-   3. Uniting Communities provides information, advice and     representation on social security matters, including Centrelink and   appeals in the Administrative Appeal Tribunal. This service is available to people on a government benefit, living in South Australia, and aged 15 and over.
+   3. Uniting Communities provides information, advice and    representation on social security matters, including Centrelink and   appeals in the Administrative Appeal Tribunal. This service is available to people on a government benefit, living in South Australia, and aged 15 and over.
    
        Phone: 8342 1800
   
@@ -118,7 +117,7 @@ subquestion: |
        Phone: 8221 5553 
        
   % if Not_ATSI:
-  your contact attempt noted for our records
+  Your contact attempt has been noted for our records!
   % endif
   
 buttons:

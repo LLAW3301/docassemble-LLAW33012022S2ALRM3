@@ -39,6 +39,7 @@ fields:
      - Male
      - Female
      - Other
+     - Rather not say
     default: Female
 ---
 question: Where do you live?
@@ -128,7 +129,7 @@ fields:
 # A 'date' datatype allows a user to insert a date
 question: Victims of Crime
 subquestion: |
-  If known, what was the date of birth of the offender?
+  If known, what was the Date of Birth of the offender?
   
 fields:
   - no label: VOC_dateofbirth_offender
@@ -314,7 +315,7 @@ fields:
     datatype: radio
     choices: 
       - Yes, I made an insurance claim: Yes
-      - No, I did not made an insurance claim: No
+      - No, I did not make an insurance claim: No
 ---
 # This code block asks potential Clients questions regarding the National Redress Scheme
 question: National Redress Scheme 
@@ -331,7 +332,7 @@ subquestion: |
   Placement type
   
 fields:
-  - Where were you placed when the abuse took place?: NRS_placement_type
+  - Where were you placed when the abuse occurred?: NRS_placement_type
     datatype: checkboxes
     choices:
       - Orphanage/Children's Home
@@ -421,7 +422,7 @@ fields:
 ---
 question: Family Law
 subquestion: |
-  What is the date of birth of your former partner?
+  What is the Date of Birth of your former partner?
   
 fields:
   - no label: FL_partner_date
@@ -437,7 +438,7 @@ fields:
     datatype: radio
     choices:
       - Yes, I have children from the relationship: Yes
-      - No, I have children from the relationship: No
+      - No, I have no children from the relationship: No
 ---
 question: Family Law
 subquestion: |
@@ -449,7 +450,7 @@ fields:
 ---
 question: Family Law
 subquestion: |
-  What is the date of birth of your child?
+  What is the Date of Birth of your child?
   
 fields:
   - no label: FL_child_date
@@ -578,7 +579,7 @@ fields:
 ---
 question: Employment
 subquestion: |
-  have you raised this issue with anyone?
+  Have you raised this issue with anyone?
 fields:
   - no label: EMPraised
     input type: radio
@@ -693,18 +694,18 @@ fields:
     - 3 months
     - 12 months
     - 18 months
-    - other
+    - Other
 ---
 question: Child Protection
 subquestion:  |
   Do you know when the next court date is?
   
 fields:
-  - do you have a court date?: CP_nextcourtdate
+  - no label: CP_nextcourtdate
     datatype: radio
     choices:
-    - Yes, i know the next court date: yes
-    - No, i don't know the next court date: no
+    - Yes, I know the next court date: yes
+    - No, I do not know the next court date: no
   - no label: CP_courtdate
     datatype: date
     show if: 
@@ -716,7 +717,7 @@ question: Personal Injury
 subquestion:  |
   What type of accident caused your injury?
 fields:
-  - What type of accident caused your injury?: PItypeofaccident
+  - no label: PItypeofaccident
     datatype: checkboxes 
     choices:
       - Motor vehicle accident
@@ -731,7 +732,7 @@ question: Personal Injury
 subquestion:  |
   What type of injury did you sustain as a result of the accident?
 fields:
-  - What type of injury do you have as a result of the accident?: PItypeofinjury
+  - no label: PItypeofinjury
     datatype: checkbox 
     choices:
     - Mental injury
@@ -758,7 +759,7 @@ fields:
   - no label: PI_prior_injury
     datatype: radio
     choices:
-    - yes, I had injuries prior to the accident: Yes
+    - Yes, I had injuries prior to the accident: Yes
     - No, I did not have any injuries prior to the accident: No
 ---
 # This question block will ask questions relating to Discrimination
@@ -775,7 +776,7 @@ question: Discrimination
 subquestion: |
   Where did the incident occur?
 fields:
-  - address: Discrimination_address
+  - Address: Discrimination_address
     default: 22 Springfield Avenue, Adelaide, 5000
 ---
 question: Discrimination
@@ -899,8 +900,8 @@ fields:
   - no label: Other_lawyer
     datatype: radio
     choices:
-      - Yes, I have used a previous lawyer: Yes
-      - No, I have not used a previous lawyer: No
+      - Yes, I have used a lawyer previously: Yes
+      - No, I have not previously used a lawyer: No
 ---
 question: Other
 subquestion: |
