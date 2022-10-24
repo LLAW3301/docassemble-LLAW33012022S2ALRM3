@@ -117,7 +117,7 @@ subquestion: |
    
        Phone: 8221 5553 
        
-  % if Not_ATSI:
+  % if Not_ATSI or Not_Resident:
   Your contact attempt has been noted for our records
   % endif
   
