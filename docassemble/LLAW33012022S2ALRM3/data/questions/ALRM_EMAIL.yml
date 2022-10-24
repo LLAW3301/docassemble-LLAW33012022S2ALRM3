@@ -4,7 +4,7 @@ code: |
 ---
 template: notification
 subject: |
-  Greetings, ${ NRFname }!
+  New Client Questionnaire 
 content: |
   Question|Answer
   ---|---
@@ -132,4 +132,33 @@ content: |
   Lawyer details|${Other_lawyer_title}
   % endif
   % endif
+---
+
+---
+code: |
+  Not_ATSI = send_email(to="ferg0178@flinders.edu.au", template=notification_ineligible)
+---
+template: notification_ineligible
+subject: |
+  Ineligible Client Alert 
+content: |
+  Somebody has attempted to access the ALRM services via online App. They did not identify as Aboriginal or Torres Strait Islander and were therefore taken to an ineligible endpoint. 
+  They have been given the following information: 
+  
+    The Aborgional Legal Rights Movement can only support clients that identify as an Aborgional or Torress Strait Islander person.
+  However, we hope these legal services may be able to assit you:
+  
+   1. Legal Services Commission of SA (LSC) provides legal services for people who can't afford to pay for legal representation.
+    
+        Phone: 1300 366 424
+    
+   2. Community Justice Services provide legal advice, assistance and referral to community members who might not otherwise get the help  they need. Most centres provide services free of charge.
+    
+   3. Uniting Communities provides information, advice and     representation on social security matters, including Centrelink and   appeals in the Administrative Appeal Tribunal. This service is available to people on a government benefit, living in South Australia, and aged 15 and over.
+   
+       Phone: 8342 1800
+  
+  4. Women's Legal Service is a community-based legal centre that   provides free and confidential legal services to women in SA.
+   
+       Phone: 8221 5553 
 ---

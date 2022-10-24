@@ -116,7 +116,10 @@ subquestion: |
   4. Women's Legal Service is a community-based legal centre that   provides free and confidential legal services to women in SA.
    
        Phone: 8221 5553 
-
+       
+  % if Not_ATSI:
+  your contact attempt noted for our records
+  % endif
   
 buttons:
   - Restart: restart
