@@ -1,4 +1,5 @@
 ---
+# a user must answer this question in order to progress through the application
 question: Do you identify as Aboriginal or Torres Strait Islander?
 subquestion: |
   Please select one of the following options
@@ -15,6 +16,7 @@ choices:
   - Yes: Yes_Resident
   - No: Not_Resident
 ---
+# 'default' values will automatically fill out details of clients, these can be deleted 
 question: What is your full legal name?
 subquestion: |
   Please enter your legal name
@@ -29,6 +31,7 @@ fields:
   - no label: NRFother
     default: Alison Smith
 ---
+# a radio allows a user to select one option only
 question: Gender
 subquestion: |
   Please enter your gender
@@ -41,6 +44,7 @@ fields:
      - Other
     default: Female
 ---
+# a field with no label allows a user to input free text into a box
 question: Where do you live?
 subquestion: |
   Please enter your residential address
@@ -56,6 +60,7 @@ fields:
     datatype: integer
     default: 30
 ---
+# an integer datatype allows a user to enter numerical data only
 question: Contact Number
 subquestion: |
   Please enter your best contact number
@@ -64,6 +69,7 @@ fields:
     datatype: integer
     default: 0410567833
 --- 
+# an email datatype allows the question block to ask a user for their email
 question: What is your email address?
 subquestion: |
   Please enter your best email address
@@ -72,6 +78,7 @@ fields:
     datatype: email
     default: smith@hotmail.com
 ---
+# A checkbox allows a user to select more than one option
 question: Legal Issue
 subquestion: |
   You will then be asked questions regarding the legal issues selected below.
