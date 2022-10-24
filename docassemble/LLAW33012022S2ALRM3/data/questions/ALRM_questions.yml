@@ -7,17 +7,27 @@ choices:
   - Yes: Yes_ATSI
   - No: Not_ATSI
 ---
+question: Do you currently reside in South Australia?
+subquestion: |
+  Please select one of the following options
+field: ALRM_resident
+choices: 
+  - Yes: Yes_Resident
+  - No: Not_Resident
+---
 question: What is your full legal name?
 subquestion: |
   Please enter your legal name
 fields:
   - no label: NRFname
+    default: John Smith
 ---
 question: Name of other party
 subquestion: |
   Please enter the full name of other party
 fields:
   - no label: NRFother
+    default: Alison Smith
 ---
 question: Gender
 subquestion: |
@@ -29,12 +39,14 @@ fields:
      - Male
      - Female
      - Other
+    default: Female
 ---
 question: Where do you live?
 subquestion: |
   Please enter your residential address
 fields:
   - no label: NRFaddress
+    default: 12 Harrington Street, Burnside, 5000
 ---
 question: How old are you?
 subquestion: |
@@ -42,6 +54,7 @@ subquestion: |
 fields:
   - no label: NRFage
     datatype: integer
+    default: 30
 ---
 question: Contact Number
 subquestion: |
@@ -49,6 +62,7 @@ subquestion: |
 fields:
   - Phone Number: NRFphone
     datatype: integer
+    default: 0410567833
 --- 
 question: What is your email address?
 subquestion: |
@@ -56,6 +70,7 @@ subquestion: |
 fields: 
   - Email Address: NRFemail
     datatype: email
+    default: smith@hotmail.com
 ---
 question: Legal Issue
 subquestion: |
@@ -88,8 +103,8 @@ fields:
   - no label: VOC_incident_report
     datatype: radio
     choices:
-    - Yes, the incident was reported to the police: VOC_Reported
-    - No, the incident was not reported to the police: VOC_Not_reported
+    - Yes, the incident was reported to the police: Yes
+    - No, the incident was not reported to the police: No
 ---
 # A 'date' datatype allows a user to input the date
 question: Victims of Crime
@@ -99,6 +114,7 @@ subquestion: |
 fields:
   - no label: VOC_date_of_offence
     datatype: date
+    default: 24/10/2022
 ---
 # a 'fields' with 'no label' allows a user to enter free text for a name
 question: Victims of Crime
@@ -107,6 +123,7 @@ subquestion: |
 
 fields: 
   - no label: VOC_perpetrator
+    default: Jenny Smith
 ---
 # A 'date' datatype allows a user to insert a date
 question: Victims of Crime
@@ -116,6 +133,8 @@ subquestion: |
 fields:
   - no label: VOC_dateofbirth_offender
     datatype: date
+    default: 10/10/2020
+    required: False
 ---
 question: Victims of Crime
 subquestion: |
@@ -125,8 +144,8 @@ fields:
   - no label: VOC_offence
     datatype: radio
     choices:
-      - Yes, the offender was charged and convicted of an offence: VOC_Yes_CC
-      - No, the offender was not charged and convicted of an offence: VOC_No_CC
+      - Yes, the offender was charged and convicted of an offence: Yes
+      - No, the offender was not charged and convicted of an offence: No
 ---
 # an 'input type' 'area' allows a user to enter free text
 question: Victims of Crime
@@ -136,6 +155,7 @@ subquestion: |
 fields:
   - no label: VOC_injuries
     input type: area
+    default: I broke my wrist.
 ---
 question: Victims of Crime
 subquestion: | 
@@ -145,8 +165,8 @@ fields:
   - no label: VOC_hospital
     datatype: radio
     choices: 
-      - Yes I attended hospital: VOC_Yes_Hospital
-      - No, I did not attend hospital: VOC_No_Hospital
+      - Yes I attended hospital: Yes
+      - No, I did not attend hospital: No
 ---
 question: Victims of Crime
 subquestion: |
@@ -156,8 +176,8 @@ fields:
   - no label: VOC_GP
     datatype: radio
     choices: 
-      - Yes, I have a General Practitioner: VOC_Yes_GP
-      - No, I do not have a General Practitioner: VOC_No_GP
+      - Yes, I have a General Practitioner: Yes
+      - No, I do not have a General Practitioner: No
 ---
 question: Victims of Crime
 subquestion: |
@@ -165,6 +185,7 @@ subquestion: |
 
 fields: 
   - no label: VOC_GP_name
+    default: Dr Harry Hill
 ---
 question: Victims of Crime
 subquestion: |
@@ -172,6 +193,7 @@ subquestion: |
 
 fields: 
   - no label: VOC_Name_MP
+    default: Mawson Medical Centre
 ---
 # This code block asks potential clients Motor Vehicle Accident questions
 # A 'date' datatype allows a user to input the date
@@ -182,6 +204,7 @@ subquestion: |
 fields:
   - no label: MVA_date_of_offence
     datatype: date
+    default: 24/10/2021
 ---
 # a 'fields' with 'no label' allows a user to enter free text for a name
 question: Motor Vehicle Accident
@@ -190,6 +213,7 @@ subquestion: |
 
 fields: 
   - no label: MVA_party
+    default: Robert Smith
 ---
 question: Motor Vehicle Accident
 subquestion: |
@@ -197,6 +221,8 @@ subquestion: |
 
 fields: 
   - no label: MVA_registration
+    default: XYZ247
+    required: False
 ---
 question: Motor Vehicle Accident
 subquestion: |
@@ -205,6 +231,7 @@ subquestion: |
 fields: 
   - no label: MVA_accident
     input type: area
+    default: Robert Smith failed to give way.
 ---
 question: Motor Vehicle Accident
 subquestion: |
@@ -214,8 +241,8 @@ fields:
   - no label: MVA_injury
     datatype: radio
     choices: 
-      - Yes, I sustained injuries: MVA_Yes_Injury
-      - No, I did not sustain an injury: MVA_No_Injury
+      - Yes, I sustained injuries: Yes
+      - No, I did not sustain an injury: No
 ---
 question: Motor Vehicle Accident
 subquestion: |
@@ -223,6 +250,7 @@ subquestion: |
 
 fields:
   - no label: MVA_detail_injury
+    default: I broke my leg.
 ---
 question: Motor Vehicle Accident
 subquestion: |
@@ -232,8 +260,8 @@ fields:
   - no label: MVA_injury_other
     datatype: radio
     choices: 
-      - Yes, the other driver sustained injuries: MVA_Yes_Injury_other
-      - No, the other driver did not sustain any injuries: MVA_No_Injury_other
+      - Yes, the other driver sustained injuries: Yes
+      - No, the other driver did not sustain any injuries: No
 ---
 question: Motor Vehicle Accident
 subquestion: |
@@ -243,8 +271,8 @@ fields:
   - no label: MVA_details_other
     datatype: radio
     choices: 
-      - Yes, I gave my details to the other driver: MVA_Yes_details_other
-      - No, I did not give my details to the other driver: MVA_No_details_other
+      - Yes, I gave my details to the other driver: Yes
+      - No, I did not give my details to the other driver: Yes
 ---
 question: Motor Vehicle Accident
 subquestion: |
@@ -254,8 +282,8 @@ fields:
   - no label: MVA_medical_help
     datatype: radio
     choices: 
-      - Yes, I did require medical help: MVA_Yes_medical_help
-      - No, I did not require medical help: MVA_No_medical_help
+      - Yes, I did require medical help: Yes
+      - No, I did not require medical help: No
 ---
 question: Motor Vehicle Accident
 subquestion: |
@@ -265,8 +293,8 @@ fields:
   - no label: MVA_police
     datatype: radio
     choices: 
-      - Yes, I contacted the police: MVA_Yes_police
-      - No, I did not contact the police: MVA_No_police
+      - Yes, I contacted the police: Yes
+      - No, I did not contact the police: No
 ---
 question: Motor Vehicle Accident
 subquestion: |
@@ -275,6 +303,7 @@ subquestion: |
 fields:
   - no label: MVA_date_of_police_contact
     datatype: date
+    default: 10/12/2021
 ---
 question: Motor Vehicle Accident
 subquestion: |
@@ -284,8 +313,8 @@ fields:
   - no label: MVA_Insurance_claim
     datatype: radio
     choices: 
-      - Yes, I made an insurance claim: MVA_Yes_Insurance_claim
-      - No, I did not made an insurance claim: MVA_No_Insurance_claim
+      - Yes, I made an insurance claim: Yes
+      - No, I did not made an insurance claim: No
 ---
 # This code block asks potential Clients questions regarding the National Redress Scheme
 question: National Redress Scheme 
@@ -294,6 +323,7 @@ subquestion: |
 
 fields: 
   - no label: NRS_Name
+    default: Johnston Smith
 ---
 # a 'checkbox' allows a user to select more than one answer
 question: National Redress Scheme 
@@ -318,6 +348,7 @@ subquestion: |
 
 fields: 
   - no label: NRS_institution_abuse
+    default: Rising Institution
 ---
 question: National Redress Scheme 
 subquestion: |
@@ -325,6 +356,7 @@ subquestion: |
 
 fields: 
   - no label: NRS_perpetrator
+    default: Travis Smith
 ---
 question: National Redress Scheme 
 subquestion: |
@@ -333,6 +365,7 @@ subquestion: |
 fields:
   - no label: NRS_date_of_offence
     datatype: date
+    default: 12/09/2015
 ---
 question: National Redress Scheme 
 subquestion: |
@@ -341,6 +374,7 @@ subquestion: |
 fields:
   - no label: NRS_age
     datatype: integer
+    default: 14
 ---
 question: National Redress Scheme 
 subquestion: |
@@ -364,8 +398,8 @@ fields:
   - no label: NRS_prior_payment
     datatype: radio
     choices:
-    - Yes, the incident was reported to the police: NRS_prior_payment_received
-    - No, the incident was not reported to the police: NRS_prior_payment_not_received
+    - Yes, the incident was reported to the police: Yes
+    - No, the incident was not reported to the police: No
 ---
 question: National Redress Scheme 
 subquestion: |
@@ -373,6 +407,7 @@ subquestion: |
 
 fields:
   - no label: NRS_Payments
+    default: I received a once off payment, I do not remember when.
 ---
 # This code block asks the potential client questions about Family Law
 # 'FL' is an abbreviated for family law
@@ -382,6 +417,7 @@ subquestion: |
    
 fields:
   - no label: FL_partner_name
+    default: Sally Smith
 ---
 question: Family Law
 subquestion: |
@@ -390,6 +426,7 @@ subquestion: |
 fields:
   - no label: FL_partner_date
     datatype: date
+    default: 10/05/1988
 ---
 question: Family Law
 subquestion: |
@@ -399,8 +436,8 @@ fields:
   - no label: FL_children
     datatype: radio
     choices:
-      - Yes, I have children from the relationship: FL_Yes_Children
-      - No, I have children from the relationship: FL_No_Children
+      - Yes, I have children from the relationship: Yes
+      - No, I have children from the relationship: No
 ---
 question: Family Law
 subquestion: |
@@ -408,6 +445,7 @@ subquestion: |
 
 fields:
   - no label: FL_child_name
+    default: Samantha Smith
 ---
 question: Family Law
 subquestion: |
@@ -416,6 +454,7 @@ subquestion: |
 fields:
   - no label: FL_child_date
     datatype: date
+    default: 05/04/2006
 ---
 question: Family Law
 subquestion: |
@@ -424,6 +463,7 @@ subquestion: |
 fields:
   - no label: FL_date_relationship
     datatype: date
+    default: 05/04/1999
 ---
 question: Family Law
 subquestion: |
@@ -432,6 +472,7 @@ subquestion: |
 fields:
   - no label: FL_separation_date
     datatype: date
+    default: 05/04/2010
 ---
 # The datatype 'checkboxes' allows the client to choose from a list of potential reasons
 question: Family Law
@@ -457,8 +498,8 @@ fields:
   - no label: FL_intervention_order
     datatype: radio
     choices:
-      - Yes, there was an intervention order: FL_Yes_intervention_order
-      - No, there was not an intervention order: FL_No_intervention_order
+      - Yes, there was an intervention order: Yes
+      - No, there was not an intervention order: No
 ---
 # These questions relate to legal issue 'Employment'
 # 'EMP' is an abbreviation for Employment
@@ -468,6 +509,7 @@ subquestion: |
 fields:
   - no label: EMPworkplace
     input type: target_variable
+    default: Coles
 ---
 question: Employment
 subquestion: |
@@ -487,6 +529,7 @@ subquestion: |
 fields:
   - no label: EMPjobrole
     datatype: target_variable
+    default: Team Member
 ---
 question: Employment
 subquestion: |
@@ -494,6 +537,7 @@ subquestion: |
 fields:
   - no label: EMPjobroleinfo
     datatype: target_variable
+    default: Stock Replenishment
 ---
 question: Employment
 subquestion: |
@@ -512,6 +556,7 @@ subquestion: |
 fields:
   - no label: EMPunionname
     datatype: target_variable
+    default: UnionsBest
 ---
 question: Employment
 subquestion: |
@@ -519,6 +564,7 @@ subquestion: |
 fields:
   - no label: EMPworkissue
     input type: area
+    default: My co-worker is harassing me, and my boss hasn't done anything about it 
 ---
 question: Employment
 subquestion: |
@@ -549,6 +595,7 @@ subquestion: |
 fields:
   - no label: EMPhappened
     input type: area
+    default: Nothing has happened
 ---
 question: Employment
 subquestion: |
@@ -556,6 +603,7 @@ subquestion: |
 fields:
   - no label: EMPextrainfo
     input type: area
+    default: I need help please.
 ---
 # This code block asks potential clients questions pertaining to child protection
 # 'CP' is an abbreviation for child protection
@@ -565,6 +613,7 @@ subquestion: |
 
 fields:
   - no label: CP_child_name
+    default: Ryan Smith
 ---
 question: Child Protection
 subquestion: |
@@ -573,6 +622,7 @@ subquestion: |
 fields:
   - no label: CP_child_date
     datatype: date
+    default: 05/06/2008
 ---
 question: Child Protection
 subquestion:  |
@@ -580,6 +630,7 @@ subquestion:  |
 fields:
   - no label: CP_dateofremoval
     datatype: date
+    default: 05/03/2009
 ---
 question: Child Protection
 Subquestion:   | 
@@ -587,6 +638,7 @@ Subquestion:   |
 fields:
   - no label: CP_reasonforremoval
     datatype: area
+    default: DV
 ---
 # a 'radio' allows a user to select one choice only
 question: Child Protection
@@ -696,6 +748,7 @@ subquestion:  |
 fields:
   - no label: PI_date_of_injury
     datatype: date
+    default: 10/10/2021
 --- 
 question: Personal Injury 
 subquestion:  |
@@ -705,8 +758,8 @@ fields:
   - no label: PI_prior_injury
     datatype: radio
     choices:
-    - yes, I had injuries prior to the accident: Prior_injury 
-    - No, I did not have any injuries prior to the accident: No_prior_injury 
+    - yes, I had injuries prior to the accident: Yes
+    - No, I did not have any injuries prior to the accident: No
 ---
 # This question block will ask questions relating to Discrimination
 question: Discrimination
@@ -716,12 +769,14 @@ subquestion: |
 fields:
   - no label: Discrimination_date_incident
     datatype: date
+    default: 10/10/2021
 ---
 question: Discrimination
 subquestion: |
   Where did the incident occur?
 fields:
   - address: Discrimination_address
+    default: 22 Springfield Avenue, Adelaide, 5000
 ---
 question: Discrimination
 subquestion: |
@@ -730,8 +785,8 @@ fields:
   - no label: Discrimination_reported
     datatype: radio
     choices:
-      - Yes: Discrimination_Yes_reported
-      - No: Discrimination_No_reported
+      - Yes: Yes
+      - No: No
 ---
 question: Discrimination
 subquestion: |
@@ -740,20 +795,24 @@ fields:
   - no label: Discrimination_person
     datatype: radio
     choices:
-      - Yes: Discrimination_Yes_person
-      - No: Discrimination_No_person
+      - Yes: Yes
+      - No: No
 ---
 question: Discrimination
 subquestion: |
   Who was the incident reported to?
 fields:
   - no label: Discrimination_name_person
+    default: The police
 ---
+# a 'required:False' code allows a user to skip a question, deeming it optional
 question: Discrimination
 subquestion: |
   Name of offender, if known.
 fields:
   - no label: Discrimination_name_offender
+    default: Wilson Smith
+    required: False
 ---
 question: Discrimination
 subquestion: |
@@ -761,16 +820,25 @@ subquestion: |
 fields:
   - no label: Discrimination_details
     input type: area
+    default: It happened whilst I was grocery shopping
 ---
-question: Stolen Generation
+question: Stolen Generations
 subquestion: |
-  If you require legal assistance in relation to a Stolen Generation claim, please call ALRM on 1800 643 222 to make an appointment. 
-
+  If you require legal assistance in relation to a Stolen Generation claim, please call ALRM on 1800 643 222 to make an appointment.
+fields:
+  - no label: StoleGen
+    input type: radio
+    choices:
+     - Yes, I understand I need to contact ALRM
 ---
 question: Housing Dispute
 subquestion: |
   If you require legal assistance in relation to a Housing Dispute claim, please call ALRM on 1800 643 222 to make an appointment. 
-  
+fields:
+  - no label: HousingDispute
+    input type: radio
+    choices:
+     - Yes, I understand I need to contact ALRM
 ---
 # This code block asks potential clients further questions if they have chosen Other
 question: Other
@@ -789,8 +857,8 @@ fields:
   - no label: FL_involvement_police
     datatype: radio
     choices:
-      - Yes, there was Police/Welfare involvement: FL_Yes_involvement_police
-      - No, there was no Police/Welfare involvement: FL_No_involvement_police
+      - Yes, there was Police/Welfare involvement: Yes
+      - No, there was no Police/Welfare involvement: No
 ---
 question: Other
 subquestion: |
@@ -800,8 +868,8 @@ fields:
   - no label: Other_FC
     datatype: radio
     choices:
-      - Yes, this issue has been to the Family Court: FL_Yes_FC
-      - No, this issue has not been to the Family Court: FL_No_FC
+      - Yes, this issue has been to the Family Court: Yes
+      - No, this issue has not been to the Family Court: No
 ---
 question: Other
 subquestion: |
@@ -810,6 +878,7 @@ subquestion: |
 fields: 
   - no label: Other_FC_date
     datatype: date
+    default: 05/07/2020
 ---
 question: Other
 subquestion: |
@@ -819,8 +888,8 @@ fields:
   - no label: Other_FDS
     datatype: radio
     choices:
-      - Yes, this issue has been to the Family Dispute Resolution: Other_Yes_FDS
-      - No, this issue has not been to the Family Dispute Resolution: Other_No_FDS
+      - Yes, this issue has been to the Family Dispute Resolution: Yes
+      - No, this issue has not been to the Family Dispute Resolution: No
 ---
 question: Other
 subquestion: |
@@ -830,8 +899,8 @@ fields:
   - no label: Other_lawyer
     datatype: radio
     choices:
-      - Yes, I have used a previous lawyer: Other_Yes_lawyer
-      - No, I have not used a previous lawyer: Other_No_lawyer
+      - Yes, I have used a previous lawyer: Yes
+      - No, I have not used a previous lawyer: No
 ---
 question: Other
 subquestion: |
@@ -840,4 +909,5 @@ subquestion: |
 fields:
   - no label: Other_lawyer_title
     input type: area
+    default: John Briggs, Senior Solicitor, Radfords
 ---

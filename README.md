@@ -1,5 +1,7 @@
 # docassemble.LLAW33012022S2ALRM3
 
+This is an application developed for ALRM for potential clients seeking legal help. 
+
 A docassemble extension.
 
 ## Author

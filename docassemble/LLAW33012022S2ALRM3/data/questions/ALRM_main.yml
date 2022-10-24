@@ -80,7 +80,7 @@ buttons:
 # It directs our user to the eligible and ineligible screens.
 mandatory: True
 code: |
-  if ALRM_ATSI == 'Yes_ATSI':
+  if ALRM_ATSI == 'Yes_ATSI' and ALRM_resident == 'Yes_Resident':
     endpoint['eligible']
   else:
     endpoint['ineligible']
@@ -100,8 +100,8 @@ question: You are not eligible
 subquestion: |
   Unfortunately you are not eligible to receive our support.
   
-  The Aborgional Legal Rights Movement can only support clients that identify as an Aborgional or Torress Strait Islander person.
-  However, we hope these legal services may be able to assit you:
+  The Aborgional Legal Rights Movement can only support clients that identify as an Aborgional or Torress Strait Islander person and who currently reside in South Australia. 
+  However, we hope these legal services may be able to assist you:
   
    1. Legal Services Commission of SA (LSC) provides legal services for people who can't afford to pay for legal representation.
     
@@ -246,6 +246,12 @@ subquestion: |
   Name of offender|${Discrimination_name_offender}
   Details of incident|${Discrimination_details}
   % endif
+  % if ALRMLegalissue['Stolen Generations']:
+  Stolen Generations|${StoleGen}
+  % endif
+  % if ALRMLegalissue['Housing Disputes']:
+  Housing Disputes|${HousingDispute}
+  % endif
   % if ALRMLegalissue['Other']:
   What is the issue|${FL_other_issue}
   Welfare/Police involvement|${FL_involvement_police}
@@ -260,9 +266,9 @@ subquestion: |
   % endif
   % endif
 
-  Thank you for taking the time to complete some questions about you and your issue. We will be in touch soon!
+  Thank you for taking the time to complete the questionnaire. We will be in touch soon.
   
-  If you do require any emergency assistance please call our 24 hour service on (08) 8113 3777. Or alternatively on our free call (SA only number) on 1800 643 222. 
+  If you do require any emergency assistance please call our 24 hour service on (08) 8113 3777. If you require assistance that is not an emergency, please call us on our free call (SA only number) on 1800 643 222. 
   
   % if email_sent_ok:
   The e-mail was sent successfully.

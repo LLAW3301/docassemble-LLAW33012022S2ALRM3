@@ -5,6 +5,7 @@ subquestion: |
 fields:
   - no label: PC_date
     datatype: date
+    default: 20/10/2019
 ---
 question: Have you already made a police complaint?
 subquestion: |
@@ -24,6 +25,7 @@ question: The police officer(s) badge number
 subquestion: |
 fields:
   - no label: PC_badge
+    required: False
 ---
 question: Please provide the name of the police station
 subquestion: |
