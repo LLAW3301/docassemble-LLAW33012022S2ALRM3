@@ -100,25 +100,25 @@ question: You are not eligible
 subquestion: |
   Unfortunately you are not eligible to receive our support.
   
-  The Aborgional Legal Rights Movement can only support clients that identify as an Aborgional or Torress Strait Islander person and who currently reside in South Australia. 
+  The Aborgional Legal Rights Movement can only support clients that identify as an Aborgional or Torress Strait Islander person AND who currently reside in South Australia. 
   However, we hope these legal services may be able to assist you:
   
-   1. Legal Services Commission of SA (LSC) provides legal services for people who can't afford to pay for legal representation.
+   1. Legal Services Commission of SA (LSC) provides legal services for people who cannot afford to pay for legal representation.
     
         Phone: 1300 366 424
     
    2. Community Justice Services provide legal advice, assistance and referral to community members who might not otherwise get the help  they need. Most centres provide services free of charge.
     
-   3. Uniting Communities provides information, advice and     representation on social security matters, including Centrelink and   appeals in the Administrative Appeal Tribunal. This service is available to people on a government benefit, living in South Australia, and aged 15 and over.
+   3. Uniting Communities provides information, advice and representation on social security matters, including Centrelink and appeals in the Administrative Appeal Tribunal. This service is available to people on a government benefit, living in South Australia, and aged 15 and over.
    
        Phone: 8342 1800
   
-  4. Women's Legal Service is a community-based legal centre that   provides free and confidential legal services to women in SA.
+  4. Women's Legal Service is a community-based legal centre that provides free and confidential legal services to women in SA.
    
        Phone: 8221 5553 
        
   % if Not_ATSI:
-  your contact attempt noted for our records
+  Your contact attempt has been noted for our records
   % endif
   
 buttons:
@@ -232,7 +232,7 @@ subquestion: |
   % endif
   % if ALRMLegalissue['Personal Injury']:
   Type of accident|${PItypeofaccident.true_values()}
-  Type of injury|${PItypeofinjury}
+  Type of injury|${PItypeofinjury.true_values()}
   Date of accident|${PI_date_of_injury}
   Prior injuries|${PI_prior_injury}
   % endif

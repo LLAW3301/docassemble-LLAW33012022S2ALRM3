@@ -105,7 +105,7 @@ content: |
   % endif
   % if ALRMLegalissue['Personal Injury']:
   Type of accident|${PItypeofaccident.true_values()}
-  Type of injury|${PItypeofinjury}
+  Type of injury|${PItypeofinjury.true_values()}
   Date of accident|${PI_date_of_injury}
   Prior injuries|${PI_prior_injury}
   % endif
