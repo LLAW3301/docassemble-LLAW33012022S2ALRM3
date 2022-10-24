@@ -437,7 +437,7 @@ fields:
     datatype: radio
     choices:
       - Yes, I have children from the relationship: Yes
-      - No, I have children from the relationship: No
+      - No, I do not have children from the relationship: No
 ---
 question: Family Law
 subquestion: |
@@ -732,7 +732,7 @@ subquestion:  |
   What type of injury did you sustain as a result of the accident?
 fields:
   - What type of injury do you have as a result of the accident?: PItypeofinjury
-    datatype: checkbox 
+    datatype: checkboxes 
     choices:
     - Mental injury
     - Broken bone

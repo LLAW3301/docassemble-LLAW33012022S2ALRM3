@@ -1,4 +1,5 @@
 ---
+# This .yml file sends an email to the email address displaying in the box below. It will send a table of answers to the questions asked in the question.yml file.
 code: |
   email_sent_ok = send_email(to="ferg0178@flinders.edu.au", template=notification)
 ---
@@ -51,7 +52,7 @@ content: |
   % endif
   % if ALRMLegalissue['National Redress Scheme (sexual abuse clients)']:
   Name of institution|${NRS_Name}
-  Placement Type|${NRS_placement_type}
+  Placement Type|${NRS_placement_type.true_values()}
   Name of Institution|${NRS_institution_abuse}
   Name of Perpetrator|${NRS_perpetrator}
   Date of offence|${NRS_date_of_offence}
@@ -72,7 +73,7 @@ content: |
   % endif
   Date of commencement of relationship|${FL_date_relationship}
   Date of separation|${FL_separation_date}
-  Reason for separation|${FL_separation_reason}
+  Reason for separation|${FL_separation_reason.true_values()}
   Intervention order|${FL_intervention_order}
   % endif
   % if ALRMLegalissue['Police Complaint']:
@@ -91,7 +92,9 @@ content: |
   Extra information|${EMPextrainfo}
   % endif
   % if ALRMLegalissue['Child Protection']:
-  Reomval of child|${CP_dateofremoval}
+  Children(s) name(s)|${CP_child_name}
+  Children(s) Date of Birth|${CP_child_date}
+  Removal of child|${CP_dateofremoval}
   Reason for removal|${CP_reasonforremoval}
   Family violence|${CP_familyviolence}
   Drugs and alcohol|${CP_drugsandalcohol}
@@ -101,10 +104,10 @@ content: |
   Court date|${CP_nextcourtdate}
   % endif
   % if ALRMLegalissue['Personal Injury']:
-  Type of accident|${PItypeofaccident}
+  Type of accident|${PItypeofaccident.true_values()}
   Type of injury|${PItypeofinjury}
   Date of accident|${PI_date_of_injury}
-  Prior injuried|${PI_prior_injury}
+  Prior injuries|${PI_prior_injury}
   % endif
   % if ALRMLegalissue['Discrimination']:
   What is the date of incident|${Discrimination_date_incident}
@@ -119,6 +122,12 @@ content: |
   Name of offender|${Discrimination_name_offender}
   Details of incident|${Discrimination_details}
   % endif
+  % if ALRMLegalissue['Stolen Generations']:
+  Stolen Generations|${StoleGen}
+  % endif
+  % if ALRMLegalissue['Housing Disputes']:
+  Housing Disputes|${HousingDispute}
+  % endif
   % if ALRMLegalissue['Other']:
   What is the issue|${FL_other_issue}
   Welfare/Police involvement|${FL_involvement_police}
@@ -132,17 +141,23 @@ content: |
   Lawyer details|${Other_lawyer_title}
   % endif
   % endif
+
 ---
 
 ---
+# This code block will send an email to ALRM if the client is not eligible as they do not identify as Aboriginal or Torres Strait Islander
 code: |
   Not_ATSI = send_email(to="ferg0178@flinders.edu.au", template=notification_ineligible)
+---
+# This code block will send an email to ALRM if the client is not eligible as they do not reside in South Australia
+code: |
+  Not_Resident = send_email(to="ferg0178@flinders.edu.au", template=notification_ineligible)
 ---
 template: notification_ineligible
 subject: |
   Ineligible Client Alert 
 content: |
-  Somebody has attempted to access the ALRM services via online App. They did not identify as Aboriginal or Torres Strait Islander and were therefore taken to an ineligible endpoint. 
+  Somebody has attempted to access the ALRM services via the application. They did not identify as Aboriginal or Torres Strait Islander, or were not currently residing in South Australia and were therefore taken to an ineligible endpoint. 
   They have been given the following information: 
   
     The Aborgional Legal Rights Movement can only support clients that identify as an Aborgional or Torress Strait Islander person.

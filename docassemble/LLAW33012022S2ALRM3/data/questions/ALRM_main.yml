@@ -179,7 +179,7 @@ subquestion: |
   % endif
   % if ALRMLegalissue['National Redress Scheme (sexual abuse clients)']:
   Name of institution|${NRS_Name}
-  Placement Type|${NRS_placement_type}
+  Placement Type|${NRS_placement_type.true_values()}
   Name of Institution|${NRS_institution_abuse}
   Name of Perpetrator|${NRS_perpetrator}
   Date of offence|${NRS_date_of_offence}
@@ -200,7 +200,7 @@ subquestion: |
   % endif
   Date of commencement of relationship|${FL_date_relationship}
   Date of separation|${FL_separation_date}
-  Reason for separation|${FL_separation_reason}
+  Reason for separation|${FL_separation_reason.true_values()}
   Intervention order|${FL_intervention_order}
   % endif
   % if ALRMLegalissue['Police Complaint']:
@@ -231,7 +231,7 @@ subquestion: |
   Court date|${CP_nextcourtdate}
   % endif
   % if ALRMLegalissue['Personal Injury']:
-  Type of accident|${PItypeofaccident}
+  Type of accident|${PItypeofaccident.true_values()}
   Type of injury|${PItypeofinjury}
   Date of accident|${PI_date_of_injury}
   Prior injuries|${PI_prior_injury}
