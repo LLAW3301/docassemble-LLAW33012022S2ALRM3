@@ -50,7 +50,7 @@ content: |
   % endif
   Insurance Claim|${MVA_Insurance_claim}
   % endif
-  % if ALRMLegalissue['National Redress Scheme (Sexual Abuse Clients)']:
+  % if ALRMLegalissue['National Redress Scheme (sexual abuse clients)']:
   Name of institution|${NRS_Name}
   Placement Type|${NRS_placement_type.true_values()}
   Name of Institution|${NRS_institution_abuse}
@@ -125,7 +125,7 @@ content: |
   % if ALRMLegalissue['Stolen Generations']:
   Stolen Generations|${StoleGen}
   % endif
-  % if ALRMLegalissue['Housing Dispute (SA Housing)']:
+  % if ALRMLegalissue['Housing Disputes (SA Housing)']:
   Housing Disputes|${HousingDispute}
   % endif
   % if ALRMLegalissue['Other']:

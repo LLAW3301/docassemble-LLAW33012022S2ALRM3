@@ -190,7 +190,7 @@ subquestion: |
   Details of Payment|${NRS_Payments}
   % endif
   % endif
-  % if ALRMLegalissue['Family Law (Children’s matters. For example access/custody)']:
+  % if ALRMLegalissue['Family Law (Children’s matters. For example include access/custody)']:
   Name of your former partner|${FL_partner_name}
   Former partner's Date of Birth|${FL_partner_date}
   Children from the relationship|${FL_children}
