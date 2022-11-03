@@ -11,7 +11,7 @@ content: |
   ---|---
   Your name|${NRFname}
   Other party's name|${NRFother}
-  Age|${NRFage}
+  Age|${ALRM_DOB}
   Gender|${NRFgender}
   Address|${NRFaddress}
   Contact Number|${NRFphone}
@@ -50,7 +50,7 @@ content: |
   % endif
   Insurance Claim|${MVA_Insurance_claim}
   % endif
-  % if ALRMLegalissue['National Redress Scheme (sexual abuse clients)']:
+  % if ALRMLegalissue['National Redress Scheme (Sexual Abuse Clients)']:
   Name of institution|${NRS_Name}
   Placement Type|${NRS_placement_type.true_values()}
   Name of Institution|${NRS_institution_abuse}
@@ -63,7 +63,7 @@ content: |
   Details of Payment|${NRS_Payments}
   % endif
   % endif
-  % if ALRMLegalissue['Family Law']:
+  % if ALRMLegalissue['Family Law (Children’s matters. For example include access/custody)']:
   Name of your former partner|${FL_partner_name}
   Former partner's Date of Birth|${FL_partner_date}
   Children from the relationship|${FL_children}
@@ -79,7 +79,7 @@ content: |
   % if ALRMLegalissue['Police Complaint']:
   Date of Incident |${PC_date}
   % endif
-  % if ALRMLegalissue['Employment']:
+  % if ALRMLegalissue['Employment (Unfair dismissal, workplace bullying/harassment)']:
   Place of work|${EMPworkplace}
   Employment Type|${EMPworktype}
   Job Title|${EMPjobrole}
@@ -91,7 +91,7 @@ content: |
   Anything happen when raised|${EMPhappened}
   Extra information|${EMPextrainfo}
   % endif
-  % if ALRMLegalissue['Child Protection']:
+  % if ALRMLegalissue['Child Protection (Department of Child Protection)']:
   Children(s) name(s)|${CP_child_name}
   Children(s) Date of Birth|${CP_child_date}
   Removal of child|${CP_dateofremoval}
@@ -125,7 +125,7 @@ content: |
   % if ALRMLegalissue['Stolen Generations']:
   Stolen Generations|${StoleGen}
   % endif
-  % if ALRMLegalissue['Housing Disputes']:
+  % if ALRMLegalissue['Housing Dispute (SA Housing)']:
   Housing Disputes|${HousingDispute}
   % endif
   % if ALRMLegalissue['Other']:

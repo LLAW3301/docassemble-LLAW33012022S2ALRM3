@@ -52,13 +52,13 @@ fields:
   - no label: NRFaddress
     default: 12 Harrington Street, Burnside, 5000
 ---
-question: How old are you?
+question: What is your date of birth?
 subquestion: |
-  Please enter your age
+  Please enter your date of birth.
 fields:
-  - no label: NRFage
-    datatype: integer
-    default: 30
+  - no label: ALRM_DOB
+    datatype: date
+    default: 24/10/1984
 ---
 # an integer datatype allows a user to enter numerical data only
 question: Contact Number
@@ -88,14 +88,14 @@ fields:
     choices:
      - Victims of Crime
      - Motor Vehicle Accident Claims
-     - National Redress Scheme (sexual abuse clients)
-     - Family Law
+     - National Redress Scheme (Sexual Abuse Clients)
+     - Family Law (Children’s matters. For example include access/custody)
      - Police Complaint
-     - Employment
-     - Child Protection
+     - Employment (Unfair dismissal, workplace bullying/harassment)
+     - Child Protection (Department of Child Protection)
      - Personal Injury
      - Discrimination
-     - Housing Disputes
+     - Housing Disputes (SA Housing)
      - Stolen Generations
      - Other 
 ---

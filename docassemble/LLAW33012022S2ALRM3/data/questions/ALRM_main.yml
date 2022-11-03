@@ -138,7 +138,7 @@ subquestion: |
   ---|---
   Your name|${NRFname}
   Other party's name|${NRFother}
-  Age|${NRFage}
+  Age|${ALRM_DOB}
   Gender|${NRFgender}
   Address|${NRFaddress}
   Contact Number|${NRFphone}
@@ -190,7 +190,7 @@ subquestion: |
   Details of Payment|${NRS_Payments}
   % endif
   % endif
-  % if ALRMLegalissue['Family Law']:
+  % if ALRMLegalissue['Family Law (Children’s matters. For example access/custody)']:
   Name of your former partner|${FL_partner_name}
   Former partner's Date of Birth|${FL_partner_date}
   Children from the relationship|${FL_children}
@@ -206,7 +206,7 @@ subquestion: |
   % if ALRMLegalissue['Police Complaint']:
   Date of Incident |${PC_date}
   % endif
-  % if ALRMLegalissue['Employment']:
+  % if ALRMLegalissue['Employment (Unfair dismissal, workplace bullying/harassment)']:
   Place of work|${EMPworkplace}
   Employment Type|${EMPworktype}
   Job Title|${EMPjobrole}
@@ -218,7 +218,7 @@ subquestion: |
   Anything happen when raised|${EMPhappened}
   Extra information|${EMPextrainfo}
   % endif
-  % if ALRMLegalissue['Child Protection']:
+  % if ALRMLegalissue['Child Protection (Department of Child Protection)']:
   Children(s) name(s)|${CP_child_name}
   Children(s) Date of Birth|${CP_child_date}
   Removal of child|${CP_dateofremoval}
@@ -252,7 +252,7 @@ subquestion: |
   % if ALRMLegalissue['Stolen Generations']:
   Stolen Generations|${StoleGen}
   % endif
-  % if ALRMLegalissue['Housing Disputes']:
+  % if ALRMLegalissue['Housing Disputes (SA Housing)']:
   Housing Disputes|${HousingDispute}
   % endif
   % if ALRMLegalissue['Other']:
